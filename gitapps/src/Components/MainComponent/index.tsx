@@ -1,11 +1,14 @@
-import { ItemDiv, Container } from "./styles";
+import { ContentDiv, LogoDiv, SideNavContainer } from "./styles";
 
 function MainComponent() {
   return (
-    <Container>
-      <ItemDiv>a</ItemDiv>
-      <ItemDiv>a</ItemDiv>
-    </Container>
+    <>
+      <SideNavContainer>
+        <LogoDiv>a</LogoDiv>
+        <ContentDiv>b</ContentDiv>
+        <ContentDiv>c</ContentDiv>
+      </SideNavContainer>
+    </>
   );
 }
 

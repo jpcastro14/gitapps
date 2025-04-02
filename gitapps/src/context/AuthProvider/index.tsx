@@ -1,13 +1,18 @@
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { IContext, IAuthProvider, Iuser } from "./types";
-import { LoginRequest, setUserLocalStorage } from "./util";
+import { getUserLocalStorage, LoginRequest, setUserLocalStorage } from "./util";
 
 export const AuthContext = createContext<IContext>({} as IContext);
 
 export const AuthProvider = ({ children }: IAuthProvider) => {
   const [user, setUser] = useState<Iuser | null>();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const user = getUserLocalStorage();
+    if (user) {
+      setUser(user);
+    }
+  }, []);
 
   async function authenticate(email: string, password: string) {
     const response = await LoginRequest(email, password);

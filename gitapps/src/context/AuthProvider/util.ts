@@ -17,6 +17,7 @@ export function setUserLocalStorage(user: Iuser | null) {
 
 export function getUserLocalStorage() {
     const json = localStorage.getItem('U')
+
     if (!json) {
         return null
     }

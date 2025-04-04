@@ -11,3 +11,8 @@ export interface IContext extends Iuser {
 export interface IAuthProvider {
     children: React.ReactElement;
 }
+
+export interface ILogin {
+        user?:string;
+        password?:string;
+}

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { AuthProvider } from "./context/AuthProvider";
 import { ProtectedLayout } from "./Components/ProtectedLayout";
-import Login from "./Components/LoginComponent";
+import MainComponent from "./Components/MainComponent";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<ProtectedLayout children={<Login />} />}
+              element={<ProtectedLayout children={<MainComponent />} />}
             />
           </Routes>
         </BrowserRouter>

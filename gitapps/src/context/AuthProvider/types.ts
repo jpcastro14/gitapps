@@ -4,7 +4,7 @@ export interface Iuser { //Interface para tipar o usuário
 }
 
 export interface IContext extends Iuser {
-    authenticate: (email: string, password: string) => Promise<void>; //Método para logar o usuário
+    authenticate: (user: string, password: string) => Promise<void>; //Método para logar o usuário
     logout: () => void; // Método para deslogar o usuário
 }
 
@@ -13,6 +13,6 @@ export interface IAuthProvider {
 }
 
 export interface ILogin {
-        user?:string;
-        password?:string;
+    user?: string;
+    password?: string;
 }

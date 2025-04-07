@@ -38,12 +38,13 @@ export const FormContainer = styled.div`
     justify-content: start;
     padding: 0 50px 0 50px;
     input{
-        height: 40px;
+        min-height: 40px;
         background-color: var(--darker-blue);
         border: 1px solid var(--light-blue);
         border-radius: 8px;
         padding: 0 0 0 20px;
         font-size: 16px;
+        margin-bottom: 10px;
     }    
     label{
         align-items: start;
@@ -84,5 +85,13 @@ export const SubmitContainer = styled.div`
         }
     }
 `;
+
+export const FormAlert = styled.h4`
+    font-size: 12px;
+    font-weight: 100;
+    color: red;
+    margin: 4px 0 0 0;
+    padding: 0;
+    z-index:100;`
 
 

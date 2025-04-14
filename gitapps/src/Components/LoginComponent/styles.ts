@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const LoginContainer = styled.div`
     width: 500px;
+    background-color: var(--darker-blue);
     border:1px solid var(--light-blue);
     border-radius: 10px;
     height: 700px;
@@ -78,6 +79,7 @@ export const SubmitContainer = styled.div`
         background-color: transparent;
         border-radius: 8px;
         font-size: 20px;
+        cursor: pointer;
         &:hover{
             background-color: var(--lighter-blue);
             color: black;

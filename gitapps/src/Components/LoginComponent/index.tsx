@@ -21,9 +21,10 @@ function Login() {
     getValues,
     formState: { errors },
   } = useForm();
+
   const auth = useAuth();
 
-  async function handleLogin(data: ILogin) {
+  async function handleLogin() {
     const values = getValues();
 
     try {
@@ -46,12 +47,18 @@ function Login() {
         <input
           type="text"
           id="user_id"
-          {...register("user", { required: true })}
+          {...register("user", { required: true, minLength: 10 })}
         />
 
         {errors?.user?.type === "required" && (
           <FormAlert style={{ visibility: "visible" }}>
             Este campo precisa ser preenchido
+          </FormAlert>
+        )}
+
+        {errors?.user?.type === "minLength" && (
+          <FormAlert style={{ visibility: "visible" }}>
+            Esse campo precisa ter 10 caracteres
           </FormAlert>
         )}
 
@@ -63,6 +70,7 @@ function Login() {
           <input type="checkbox" />
           Me manter conectado
         </CheckBoxContainer>
+
         {errors?.password?.type === "required" && (
           <FormAlert style={{ visibility: "visible" }}>
             Este campo precisa ser preenchido

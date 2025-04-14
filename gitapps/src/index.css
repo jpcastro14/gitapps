@@ -2,7 +2,6 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -20,6 +19,8 @@
   --white: white;
   --alternate-white: #dfdfdf;
   --regular-gray: #f7f7f8;
+  --regular-red: #ff595e;
+  --lighter-red: #fd8387;
 }
 
 a {

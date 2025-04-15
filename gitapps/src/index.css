@@ -37,7 +37,7 @@ body {
   display: flex;
   place-items: center;
   min-height: 100vh;
-  background-color: whitesmoke;
+  background-color: #535bf2;
 }
 
 h1 {

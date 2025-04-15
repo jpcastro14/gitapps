@@ -1,4 +1,10 @@
-import { ContentDiv, LogoDiv, LogoutDiv, SideNavContainer } from "./styles";
+import {
+  ContentDiv,
+  LogoDiv,
+  LogoutDiv,
+  MainContentDiv,
+  SideNavContainer,
+} from "./styles";
 import { useAuth } from "../../context/AuthProvider/useAuth";
 import logo from "../../assets/LOGINLOGO.svg";
 
@@ -23,6 +29,7 @@ function MainComponent() {
           <button onClick={auth.logout}>LogOut</button>
         </LogoutDiv>
       </SideNavContainer>
+      <MainContentDiv></MainContentDiv>
     </>
   );
 }

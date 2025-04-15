@@ -5,5 +5,5 @@
   min-height: 720px;
   text-align: center;
   display: flex;
-  background-color: white;
+  background-color: var(--regular-blue);
 }

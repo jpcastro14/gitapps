@@ -6,7 +6,7 @@ export const SideNavContainer = styled.div`
     grid-template-columns: 100%;
     gap: 20px;
     flex-direction: column;
-    width: 300px;
+    min-width: 300px;
     background-color: var(--darker-blue);
     justify-content: space-between;
     padding: 20px;
@@ -29,7 +29,6 @@ export const ContentDiv = styled.div`
     gap: 20px;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     height: 450px;
     button{
         height: 46px;
@@ -42,15 +41,6 @@ export const ContentDiv = styled.div`
             background-color: var(--regular-blue);
         }
     }
-`;
-
-export const ItemDiv = styled.div`
-    height: 30px;
-    width: 100%;
-    background-color: var(--white);
-    border-radius: 8px;
-    border: 1px solid var(--alternate-white);
-    box-shadow: 2px 1px 2px 1px var(--regular-gray);
 `;
 
 export const LogoutDiv = styled.div`
@@ -67,3 +57,8 @@ export const LogoutDiv = styled.div`
         }
     }
 `
+
+export const MainContentDiv = styled.div`
+    background-color: var(--alternate-white);
+    width: 100%;
+`;

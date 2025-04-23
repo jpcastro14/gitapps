@@ -7,9 +7,15 @@ import {
 } from "./styles";
 import { useAuth } from "../../context/AuthProvider/useAuth";
 import logo from "../../assets/LOGINLOGO.svg";
+import { JSX, ReactElement, useEffect, useState } from "react";
+import { ContractsComponent } from "./ContractsComponent";
+import { ClientsComponent } from "./ClientsComponent";
 
 function MainComponent() {
   const auth = useAuth();
+
+  const [showComponent, setShowComponent] =
+    useState<JSX.Element>(ContractsComponent);
 
   return (
     <>
@@ -19,9 +25,13 @@ function MainComponent() {
           <h2>Software</h2>
         </LogoDiv>
         <ContentDiv>
-          <button>Contratos</button>
+          <button onClick={() => setShowComponent(ContractsComponent)}>
+            Contratos
+          </button>
+          <button onClick={() => setShowComponent(ClientsComponent)}>
+            Clientes
+          </button>
           <button>Empresas</button>
-          <button>Clientes</button>
           <button>Projetos</button>
           <button>Fórum</button>
         </ContentDiv>
@@ -29,7 +39,7 @@ function MainComponent() {
           <button onClick={auth.logout}>LogOut</button>
         </LogoutDiv>
       </SideNavContainer>
-      <MainContentDiv></MainContentDiv>
+      <MainContentDiv>{showComponent}</MainContentDiv>
     </>
   );
 }

@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif, "assistant";
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -18,7 +18,7 @@
   --lighter-blue: #44cfcb;
   --white: white;
   --alternate-white: #dfdfdf;
-  --regular-gray: #f7f7f8;
+  --regular-gray: #dddddd;
   --regular-red: #ff595e;
   --lighter-red: #fd8387;
 }

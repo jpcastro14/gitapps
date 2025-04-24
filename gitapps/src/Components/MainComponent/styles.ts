@@ -61,4 +61,5 @@ export const LogoutDiv = styled.div`
 export const MainContentDiv = styled.div`
     background-color: var(--alternate-white);
     width: 100%;
+    display: grid;
 `;

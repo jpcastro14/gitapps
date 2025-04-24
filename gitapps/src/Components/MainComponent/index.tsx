@@ -7,15 +7,16 @@ import {
 } from "./styles";
 import { useAuth } from "../../context/AuthProvider/useAuth";
 import logo from "../../assets/LOGINLOGO.svg";
-import { JSX, ReactElement, useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import { ContractsComponent } from "./ContractsComponent";
 import { ClientsComponent } from "./ClientsComponent";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function MainComponent() {
   const auth = useAuth();
 
   const [showComponent, setShowComponent] =
-    useState<JSX.Element>(ContractsComponent);
+    useState<JSX.Element>(ClientsComponent);
 
   return (
     <>
@@ -25,9 +26,7 @@ function MainComponent() {
           <h2>Software</h2>
         </LogoDiv>
         <ContentDiv>
-          <button onClick={() => setShowComponent(ContractsComponent)}>
-            Contratos
-          </button>
+          <button>Contratos</button>
           <button onClick={() => setShowComponent(ClientsComponent)}>
             Clientes
           </button>

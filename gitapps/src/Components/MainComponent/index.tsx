@@ -7,7 +7,7 @@ import {
 } from "./styles";
 import { useAuth } from "../../context/AuthProvider/useAuth";
 import logo from "../../assets/LOGINLOGO.svg";
-import { JSX, ReactElement, useEffect, useState } from "react";
+import { JSX, useState } from "react";
 import { ContractsComponent } from "./ContractsComponent";
 import { ClientsComponent } from "./ClientsComponent";
 

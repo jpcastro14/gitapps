@@ -16,7 +16,7 @@ function MainComponent() {
   const auth = useAuth();
 
   const [showComponent, setShowComponent] =
-    useState<JSX.Element>(ClientsComponent);
+    useState<JSX.Element>(ContractsComponent);
 
   return (
     <>
@@ -26,9 +26,11 @@ function MainComponent() {
           <h2>Software</h2>
         </LogoDiv>
         <ContentDiv>
-          <button>Contratos</button>
           <button onClick={() => setShowComponent(ClientsComponent)}>
-            Clientes
+            Cliente
+          </button>
+          <button onClick={() => setShowComponent(ContractsComponent)}>
+            Contratos
           </button>
           <button>Empresas</button>
           <button>Projetos</button>

@@ -10,7 +10,6 @@ import logo from "../../assets/LOGINLOGO.svg";
 import { JSX, useState } from "react";
 import { ContractsComponent } from "./ContractsComponent";
 import { ClientsComponent } from "./ClientsComponent";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function MainComponent() {
   const auth = useAuth();

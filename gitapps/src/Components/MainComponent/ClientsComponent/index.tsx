@@ -1,16 +1,21 @@
+import { useContext } from "react";
 import {
   Container,
   ClientInfoContainer,
   ClientContactContainer,
   ClientsCard,
 } from "./styles";
+import { UserContext, UserProvider } from "../../../DataContext/UserContext";
 
 export const ClientsComponent = () => {
+
+  const user = useContext(UserContext)
+
   return (
     <Container>
       <ClientsCard>
         <ClientInfoContainer>
-          <span>Carlos Almácegas Duarte </span>
+          <span>{user?.name}</span>
           <p>KP Software - Carreira Policial</p>
         </ClientInfoContainer>
         <ClientContactContainer>

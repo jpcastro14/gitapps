@@ -13,6 +13,6 @@ export interface IAuthProvider {
 }
 
 export interface ILogin {
-    user?: string;
+    email?: string;
     password?: string;
 }

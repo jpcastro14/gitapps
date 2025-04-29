@@ -3,21 +3,22 @@ import "./App.css";
 import { AuthProvider } from "./context/AuthProvider";
 import { ProtectedLayout } from "./Components/ProtectedLayout";
 import MainComponent from "./Components/MainComponent";
-import { ClientsComponent } from "./Components/MainComponent/ClientsComponent";
+import { UserProvider } from "./DataContext/UserContext";
 
 function App() {
   return (
     <>
       <AuthProvider>
+        <UserProvider>
         <BrowserRouter>
           <Routes>
             <Route
               path="/"
               element={<ProtectedLayout children={<MainComponent />} />}
             />
-            <Route path="/clients" element={<ClientsComponent />} />
           </Routes>
         </BrowserRouter>
+        </UserProvider>
       </AuthProvider>
     </>
   );

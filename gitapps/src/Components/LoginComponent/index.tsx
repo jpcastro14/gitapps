@@ -9,9 +9,6 @@ import {
 } from "./styles";
 import LOGINLOGO from "../../assets/LOGINLOGO.svg";
 import { useForm } from "react-hook-form";
-import { ILogin, Iuser } from "../../context/AuthProvider/types";
-import axios from "axios";
-import { Api } from "../../services/api";
 import { useAuth } from "../../context/AuthProvider/useAuth";
 
 function Login() {
@@ -25,12 +22,15 @@ function Login() {
   const auth = useAuth();
 
   async function handleLogin() {
+
     const values = getValues();
+    console.log(values);
 
     try {
-      await auth.authenticate(values.user, values.password);
+      await auth.authenticate(values.email, values.password);
     } catch (error) {
       alert("Usuário ou senha incorretos");
+      alert(error)
     }
   }
 
@@ -47,7 +47,7 @@ function Login() {
         <input
           type="text"
           id="user_id"
-          {...register("user", { required: true, minLength: 10 })}
+          {...register("email", { required: true, minLength: 10 })}
         />
 
         {errors?.user?.type === "required" && (
@@ -66,10 +66,10 @@ function Login() {
           <label htmlFor="user_password">Senha</label>
         </LabelContainer>
         <input type="password" {...register("password", { required: true })} />
-        <CheckBoxContainer>
+        {/* <CheckBoxContainer>
           <input type="checkbox" />
           Me manter conectado
-        </CheckBoxContainer>
+        </CheckBoxContainer> */}
 
         {errors?.password?.type === "required" && (
           <FormAlert style={{ visibility: "visible" }}>

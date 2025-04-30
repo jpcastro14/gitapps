@@ -5,17 +5,13 @@ import {
   ClientContactContainer,
   ClientsCard,
 } from "./styles";
-import { UserContext, UserProvider } from "../../../DataContext/UserContext";
 
 export const ClientsComponent = () => {
-
-  const user = useContext(UserContext)
-
   return (
     <Container>
       <ClientsCard>
         <ClientInfoContainer>
-          <span>{user?.name}</span>
+          <span>Carlos Almácegas Duarte</span>
           <p>KP Software - Carreira Policial</p>
         </ClientInfoContainer>
         <ClientContactContainer>

@@ -7,28 +7,29 @@ import {
 } from "./styles";
 import { useAuth } from "../../context/AuthProvider/useAuth";
 import logo from "../../assets/LOGINLOGO.svg";
-import { JSX, useState } from "react";
+import { ReactElement, useContext, useState } from "react";
 import { ContractsComponent } from "./ContractsComponent";
 import { ClientsComponent } from "./ClientsComponent";
+import { UserContext } from "../../DataContext/UserContext";
 
 function MainComponent() {
-  const auth = useAuth();
-
   const [showComponent, setShowComponent] =
-    useState<JSX.Element>(ContractsComponent);
+    useState<ReactElement>(ContractsComponent);
 
+  const auth = useAuth();
+  const user = useContext(UserContext);
   return (
     <>
       <SideNavContainer>
         <LogoDiv onClick={auth.logout}>
           <img src={logo} />
-          <h2>Software</h2>
+          <h2>software</h2>
         </LogoDiv>
         <ContentDiv>
-          <button onClick={() => setShowComponent(ClientsComponent)}>
-            Cliente
-          </button>
-          <button onClick={() => setShowComponent(ContractsComponent)}>
+          <button
+            onClick={() => setShowComponent(<ClientsComponent />)}
+          ></button>
+          <button onClick={() => setShowComponent(<ContractsComponent />)}>
             Contratos
           </button>
           <button>Empresas</button>

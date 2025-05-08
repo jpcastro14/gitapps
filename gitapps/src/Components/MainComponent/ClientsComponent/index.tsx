@@ -5,14 +5,19 @@ import {
   ClientContactContainer,
   ClientsCard,
 } from "./styles";
+import { UserContext } from "../../../DataContext/UserContext";
 
 export const ClientsComponent = () => {
+  const user = useContext(UserContext);
+
   return (
     <Container>
       <ClientsCard>
         <ClientInfoContainer>
-          <span>Carlos Almácegas Duarte</span>
-          <p>KP Software - Carreira Policial</p>
+          <span>
+            {user?.name} {user?.surname}
+          </span>
+          <p>{user?.project}</p>
         </ClientInfoContainer>
         <ClientContactContainer>
           <span>Email: carlosduarte@kpsoftware.com</span>

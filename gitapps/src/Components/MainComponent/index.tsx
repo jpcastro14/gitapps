@@ -14,16 +14,17 @@ import { UserContext } from "../../DataContext/UserContext";
 
 function MainComponent() {
   const [showComponent, setShowComponent] =
-    useState<ReactElement>(ContractsComponent);
+    useState<ReactElement>(ClientsComponent);
 
   const auth = useAuth();
   const user = useContext(UserContext);
+
   return (
     <>
       <SideNavContainer>
         <LogoDiv onClick={auth.logout}>
           <img src={logo} />
-          <h2>software</h2>
+          <h2></h2>
         </LogoDiv>
         <ContentDiv>
           <button

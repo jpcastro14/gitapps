@@ -30,9 +30,6 @@ function MainComponent() {
           <button
             onClick={() => setShowComponent(<ClientsComponent />)}
           ></button>
-          <button onClick={() => setShowComponent(<ContractsComponent />)}>
-            Contratos
-          </button>
           <button>Empresas</button>
           <button>Projetos</button>
           <button>Fórum</button>

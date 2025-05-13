@@ -11,8 +11,19 @@ export const ItemContainer = styled.div`
     margin: 20px;
 `;
 
+export const P = styled.p`
+    border: 1px solid var(--regular-blue);
+    margin: 0;
+    width: 80%;
+`;
+
 export const ItemField = styled.div`
     background-color: aliceblue;
-    height: 40px;
     color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 `;

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 100%;
     height: 100vh;
     display: grid;
+    margin: 0 auto;
     grid-template-columns: 100%;
 `;
 
@@ -14,15 +14,19 @@ export const ItemContainer = styled.div`
 export const P = styled.p`
     border: 1px solid var(--regular-blue);
     margin: 0;
-    width: 80%;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 `;
 
 export const ItemField = styled.div`
     background-color: aliceblue;
     color: black;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
     justify-content: center;
     align-items: center;
     padding: 20px;

@@ -24,27 +24,31 @@ export const ContractsComponent = () => {
     fetchData();
   }, []);
 
-  console.log(apiData);
-
-  const logText = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const filterText = (e: React.ChangeEvent<HTMLInputElement>) => {
     const filtersample = apiData.filter((el) =>
       el.name.includes(e.target.value)
     );
 
     setFilteredData(filtersample);
+    console.log(e.target.value);
+  };
+
+  const setFilter = () => {
+    setFilteredData(apiData.filter((el) => el.id % 2 != 0));
   };
 
   return (
     <Container>
       <ItemContainer>
+        <input type="text" onChange={filterText} />
         <ItemField>
-          <input type="text" onChange={logText} />
           {}
 
           {filteredData
             ? filteredData?.map((item) => <P key={item.id}>{item.name}</P>)
             : apiData.map((item) => <P key={item.id}>{item.name}</P>)}
         </ItemField>
+        <button onClick={setFilter}>Filtrar</button>
       </ItemContainer>
     </Container>
   );

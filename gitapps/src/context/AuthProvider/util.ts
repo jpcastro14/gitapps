@@ -12,11 +12,11 @@ export async function LoginRequest(email: string, password: string) {
 }
 
 export function setUserLocalStorage(user: Iuser | null) {
-    localStorage.setItem('U', JSON.stringify(user));
+    localStorage.setItem('u', JSON.stringify(user));
 }
 
 export function getUserLocalStorage() {
-    const json = localStorage.getItem('U')
+    const json = localStorage.getItem('u')
 
     if (!json) {
         return null

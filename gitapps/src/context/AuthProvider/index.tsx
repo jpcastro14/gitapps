@@ -17,7 +17,9 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
   async function authenticate(email: string, password: string) {
     const response = await LoginRequest(email, password);
 
-    const payload = { email };
+    console.log(response);
+
+    const payload = { token: response.token, email };
 
     setUser(payload);
     setUserLocalStorage(payload);

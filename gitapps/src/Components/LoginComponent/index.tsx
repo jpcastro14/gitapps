@@ -22,7 +22,6 @@ function Login() {
   const auth = useAuth();
 
   async function handleLogin() {
-
     const values = getValues();
     console.log(values);
 
@@ -30,7 +29,6 @@ function Login() {
       await auth.authenticate(values.email, values.password);
     } catch (error) {
       alert("Usuário ou senha incorretos");
-      alert(error)
     }
   }
 

@@ -13,6 +13,9 @@ export const ContractsComponent = () => {
   const [filteredData, setFilteredData] = useState<IApiData[] | undefined>(
     undefined
   );
+  const [deletedItems, setDeletedItems] = useState<IApiData[] | undefined>();
+
+  const arr: IApiData[] | undefined = [];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,27 +31,39 @@ export const ContractsComponent = () => {
     const filtersample = apiData.filter((el) =>
       el.name.includes(e.target.value)
     );
-
     setFilteredData(filtersample);
     console.log(e.target.value);
   };
 
-  const setFilter = () => {
-    setFilteredData(apiData.filter((el) => el.id % 2 != 0));
+  const deleteItem = (id: number) => {
+    setApiData(apiData.filter((item) => item.id !== id)); //Ao clicar, a função retorna todos os itens com ID diferente do item escolhido
+    const newarr = apiData.filter((item) => item.id !== id);
+    setDeletedItems((prevState) => [...prevState, newarr]);
+    console.log(deletedItems?.length);
   };
 
   return (
     <Container>
+      {deletedItems?.map((item) => (
+        <p>{item.name}</p>
+      ))}
       <ItemContainer>
         <input type="text" onChange={filterText} />
         <ItemField>
           {}
 
           {filteredData
-            ? filteredData?.map((item) => <P key={item.id}>{item.name}</P>)
-            : apiData.map((item) => <P key={item.id}>{item.name}</P>)}
+            ? filteredData?.map((item) => (
+                <P onClick={() => deleteItem(item.id)} key={item.id}>
+                  {item.name}
+                </P>
+              ))
+            : apiData.map((item) => (
+                <P key={item.id} onClick={() => deleteItem(item.id)}>
+                  {item.name}
+                </P>
+              ))}
         </ItemField>
-        <button onClick={setFilter}>Filtrar</button>
       </ItemContainer>
     </Container>
   );

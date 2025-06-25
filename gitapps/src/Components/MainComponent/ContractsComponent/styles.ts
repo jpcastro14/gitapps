@@ -11,11 +11,10 @@ export const ItemContainer = styled.div`
     margin: 20px;
 `;
 
-export const P = styled.p`
+export const P = styled.div`
     border: 1px solid var(--regular-blue);
     margin: 0;
-    height: 100px;
-    width: 100px;
+    width: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +25,7 @@ export const ItemField = styled.div`
     background-color: aliceblue;
     color: black;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
     justify-content: center;
     align-items: center;
     padding: 20px;

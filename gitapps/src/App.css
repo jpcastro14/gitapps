@@ -1,8 +1,8 @@
 #root {
   margin: 0 auto;
+  padding: 20px;
   width: 100%;
   height: 100vh;
-  min-height: 720px;
   text-align: center;
   display: flex;
   background-color: var(--regular-blue);

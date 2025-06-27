@@ -13,9 +13,6 @@ export const ContractsComponent = () => {
   const [filteredData, setFilteredData] = useState<IApiData[] | undefined>(
     undefined
   );
-  const [deletedItems, setDeletedItems] = useState<IApiData[] | undefined>();
-
-  const arr: IApiData[] | undefined = [];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,16 +34,10 @@ export const ContractsComponent = () => {
 
   const deleteItem = (id: number) => {
     setApiData(apiData.filter((item) => item.id !== id)); //Ao clicar, a função retorna todos os itens com ID diferente do item escolhido
-    const newarr = apiData.filter((item) => item.id !== id);
-    setDeletedItems((prevState) => [...prevState, newarr]);
-    console.log(deletedItems?.length);
   };
 
   return (
     <Container>
-      {deletedItems?.map((item) => (
-        <p>{item.name}</p>
-      ))}
       <ItemContainer>
         <input type="text" onChange={filterText} />
         <ItemField>

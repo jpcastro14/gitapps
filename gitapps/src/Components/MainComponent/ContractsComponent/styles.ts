@@ -5,10 +5,12 @@ export const Container = styled.div`
     display: grid;
     margin: 0 auto;
     grid-template-columns: 100%;
+    background-color: white;
 `;
 
 export const ItemContainer = styled.div`
     margin: 20px;
+    background-color: orange;
 `;
 
 export const P = styled.div`
@@ -25,7 +27,7 @@ export const ItemField = styled.div`
     background-color: aliceblue;
     color: black;
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 50% 50%;
     justify-content: center;
     align-items: center;
     padding: 20px;

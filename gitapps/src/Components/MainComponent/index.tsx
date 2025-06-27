@@ -1,40 +1,66 @@
 import {
-  ContentDiv,
-  LogoDiv,
-  LogoutDiv,
-  MainContentDiv,
-  SideNavContainer,
-} from "./styles";
-import { useAuth } from "../../context/AuthProvider/useAuth";
-import logo from "../../assets/LOGINLOGO.svg";
-import { ReactElement, useContext, useState } from "react";
-import { ClientsComponent } from "./ClientsComponent";
+  Button,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  Typography,
+} from "@mui/material";
+import { CardTest, Container, ContentArea, TitleDiv } from "./styles";
 
 function MainComponent() {
-  const [showComponent, setShowComponent] = useState<ReactElement>();
-
-  const auth = useAuth();
-
   return (
     <>
-      <SideNavContainer>
-        <LogoDiv onClick={auth.logout}>
-          <img src={logo} />
-          <h2></h2>
-        </LogoDiv>
-        <ContentDiv>
-          <button
-            onClick={() => setShowComponent(<ClientsComponent />)}
-          ></button>
-          <button>Empresas</button>
-          <button>Projetos</button>
-          <button>Fórum</button>
-        </ContentDiv>
-        <LogoutDiv>
-          <button onClick={auth.logout}>LogOut</button>
-        </LogoutDiv>
-      </SideNavContainer>
-      <MainContentDiv>{showComponent}</MainContentDiv>
+      <Container>
+        <TitleDiv>
+          <h2>HUB DE APLICATIVOS NIVEL 1</h2>
+        </TitleDiv>
+        <ContentArea>
+          <CardTest variant="outlined">
+            <CardContent
+              style={{
+                textAlign: "start",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "black",
+                  fontSize: 20,
+                  fontWeight: 300,
+                  marginBottom: 2,
+                }}
+              >
+                Todo List
+              </Typography>
+              <Typography
+                sx={{
+                  color: "gray",
+                  fontSize: 20,
+                }}
+              >
+                Um app de lista de tarefas, criado com ReactJs e Typescript,
+                utilizado para controlar tarefas a fazer, concluidas e
+                pendentes.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button variant="outlined" fullWidth>
+                Testar
+              </Button>
+            </CardActions>
+          </CardTest>
+
+          <Card>b</Card>
+          <Card>c</Card>
+          <Card>d</Card>
+          <Card>d</Card>
+          <Card>d</Card>
+          <Card>d</Card>
+          <Card>d</Card>
+        </ContentArea>
+      </Container>
     </>
   );
 }

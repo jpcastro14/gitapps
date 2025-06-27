@@ -1,65 +1,43 @@
 import styled from "styled-components";
+import { Card } from "@mui/material";
 
-export const SideNavContainer = styled.div`
+export const Container = styled.div`
+    height: 80%;
+    width: 100%;
     display: grid;
-    grid-template-rows: 25% 60% 10%;
+    margin: 0 auto;
     grid-template-columns: 100%;
-    gap: 20px;
-    flex-direction: column;
-    min-width: 300px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 15% 85%;
+`;
+
+export const TitleDiv = styled.div`
     background-color: var(--darker-blue);
-    justify-content: space-between;
-    padding: 20px;
-`;
-
-export const LogoDiv = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    img{
-        height: 100px;
+    padding-left: 20px;
+    h2{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 300;
     }
 `;
 
-export const ContentDiv = styled.div`
+export const ContentArea = styled.div`
+    background-color: aliceblue;
+    border-radius: 0 0 4px 4px;
+    color: black;
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 10% 10% 10% 10% 10%;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr;
+    padding: 20px;
     gap: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 450px;
-    button{
-        height: 46px;
-        border: 2px solid var(--regular-blue);
-        border-radius: 6px;
-        background-color: transparent;
-        font-size: 18px;
-        font-weight:lighter;
-        &:hover{
-            background-color: var(--regular-blue);
-        }
-    }
+
+    
 `;
 
-export const LogoutDiv = styled.div`
-    width: 100%;
-    button{
-        font-size: 18px;
-        width: 100%;
-        height: 46px;
-        background-color: var(--regular-red);
-        border: 1px solid var(--regular-red);
-        border-radius: 8px;
-        &:hover{
-            background-color: var(--lighter-red);
-        }
-    }
+export const CardTest = styled(Card)`
+    background-color: black;
 `
-
-export const MainContentDiv = styled.div`
-    background-color: var(--alternate-white);
-    width: 100%;
-    display: grid;
-`;

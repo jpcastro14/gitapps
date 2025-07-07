@@ -4,7 +4,7 @@ import { AuthProvider } from "./context/AuthProvider";
 import { ProtectedLayout } from "./Components/ProtectedLayout";
 import MainComponent from "./Components/MainComponent";
 import { UserProvider } from "./DataContext/UserContext";
-import { ContractsComponent } from "./Components/MainComponent/ContractsComponent";
+import TodoApp from "./Components/TodoComponent";
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
                 element={<ProtectedLayout children={<MainComponent />} />}
               />
               <Route
-                path="/contratos"
-                element={<ProtectedLayout children={<ContractsComponent />} />}
+                path="/todo"
+                element={<TodoApp />}
               />
             </Routes>
           </BrowserRouter>

@@ -7,8 +7,12 @@ import {
   Typography,
 } from "@mui/material";
 import { CardTest, Container, ContentArea, TitleDiv } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 function MainComponent() {
+
+  const navigate = useNavigate();
+
   return (
     <>
       <Container>
@@ -16,7 +20,7 @@ function MainComponent() {
           <h2>HUB DE APLICATIVOS NIVEL 1</h2>
         </TitleDiv>
         <ContentArea>
-          <CardTest variant="outlined">
+          <CardTest variant="elevation">
             <CardContent
               style={{
                 textAlign: "start",
@@ -46,7 +50,7 @@ function MainComponent() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" fullWidth>
+              <Button onClick={() => navigate('/todo')} variant="outlined" fullWidth>
                 Testar
               </Button>
             </CardActions>

@@ -1,27 +1,31 @@
 import { useState } from "react";
-import { ContentArea, InputArea, TaskArea, TitleDiv, TodoContainer } from "./styles";
-
+import { ContentArea, FinishTask, InputArea, TaskArea, TitleDiv, TodoContainer } from "./styles";
 import { useForm } from "react-hook-form";
+import useId from "@mui/material/utils/useId";
 
 type TTask = {
-    id: number,
+    id: string,
     task: string
 }
 
 function TodoApp() {
 
-    const { register, handleSubmit, getValues } = useForm()
-    const [taskItem, setTaskItem] = useState<TTask[]>([{} as TTask])
+    const { register, handleSubmit, getValues, resetField, formState: { errors } } = useForm()
+    const id = crypto.randomUUID()
+    const [taskItem, setTaskItem] = useState<TTask[]>([])
 
     function createTask() {
         const values = getValues()
-        setTaskItem([...taskItem, { id: 1, task: values.task }])
+        setTaskItem([...taskItem, { id: id, task: values.task }])
+        resetField("task")
         console.log(values);
 
     }
 
-    function removeTask(id: number) {
-        console.log(id);
+    function removeTask(id: string) {
+
+        setTaskItem(taskItem.filter((item) => item.id !== id))
+
     }
 
 
@@ -29,15 +33,16 @@ function TodoApp() {
         <TodoContainer>
             <TitleDiv><h2>Senado Tarefas</h2></TitleDiv>
             <InputArea>
-                <input type="text" {...register("task", { required: true })} />
+                <input placeholder="Tarefa" type="text" {...register("task", { required: true })} />
                 <button onClick={() => handleSubmit(createTask)()}>Criar Tarefa</button>
             </InputArea>
+            {errors?.task?.type === "required" && (<p style={{ color: "red" }}>Preencha o campo "Tarefa"</p>)}
             <ContentArea>
 
-                {taskItem.length > 0 ? taskItem.map((item, index) => <TaskArea>
-                    <span key={index}>{item.task}</span>
+                {taskItem.length ? taskItem.map((item, id) => <TaskArea>
+                    <span key={id}>{item.task}</span>
                     <div>
-                        <button onClick={() => removeTask(item.id)}>Concluir</button>
+                        <FinishTask onClick={() => removeTask(item.id)}>Concluir</FinishTask>
                         <button>Editar</button>
                     </div>
                 </TaskArea>) : ""}

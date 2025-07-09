@@ -5,5 +5,5 @@
   height: 100vh;
   text-align: center;
   display: flex;
-  background-color: var(--regular-blue);
+  background-color: var(--darker-blue);
 }

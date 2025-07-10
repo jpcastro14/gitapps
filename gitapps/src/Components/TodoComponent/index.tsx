@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 type TTask = {
     id: string,
     task: string
-    state: boolean
+    active?: boolean
 }
 
 function TodoApp() {
@@ -14,10 +14,11 @@ function TodoApp() {
     const id = crypto.randomUUID()
     const [taskItem, setTaskItem] = useState<TTask[]>([])
     const [finishedTask, setFinishedTask] = useState<TTask[]>([])
+    const [editable, setEditable] = useState<boolean>(false)
 
     function createTask() {
         const values = getValues()
-        setTaskItem([...taskItem, { id: id, task: values.task, state: true }])
+        setTaskItem([...taskItem, { id: id, task: values.task, active: true }])
         resetField("task")
         console.log(values);
     }
@@ -25,8 +26,7 @@ function TodoApp() {
     function removeTask(id: string, task: string) {
 
         setTaskItem(taskItem.filter((item) => item.id !== id))
-        //const finished = taskItem.filter((item) => item.id == id)
-        setFinishedTask([...finishedTask, { id: id, task: task, state: false }])
+        setFinishedTask([...finishedTask, { id: id, task: task, active: false }])
 
     }
 
@@ -43,7 +43,7 @@ function TodoApp() {
             <ContentArea>
                 {taskItem.length ? taskItem.map((item, id) =>
                     <TaskArea>
-                        <span key={id}>{item.task}</span>
+                        <input value={item.task} disabled={item.active} />
                         <div>
                             <FinishTaskButton onClick={() => removeTask(item.id, item.task)}>Concluir</FinishTaskButton>
                             <EditTaskButton>Editar</EditTaskButton>
@@ -51,7 +51,7 @@ function TodoApp() {
                     </TaskArea>) : ""}
                 <TaskDivider>Tarefas concluidas</TaskDivider>
                 {finishedTask.map((item) =>
-                    <TaskArea $finished={item.state} >
+                    <TaskArea $finished={item.active} >
                         <span key={id}>{item.task}</span>
                         <div>
                             <FinishTaskButton onClick={() => removeTask(item.id, item.task)}>Concluir</FinishTaskButton>

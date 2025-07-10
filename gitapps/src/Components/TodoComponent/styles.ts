@@ -6,7 +6,7 @@ interface ITaskArea {
 
 export const TodoContainer = styled.div`
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   height: auto;
   display: grid;
   margin: 0 auto;

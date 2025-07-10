@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface ITaskArea {
+  $finished?: boolean;
+}
+
 export const TodoContainer = styled.div`
   width: 100%;
   max-width: 1000px;
@@ -65,7 +69,7 @@ export const ContentArea = styled.div`
   flex-direction: column;
 `;
 
-export const TaskArea = styled.div`
+export const TaskArea = styled.div<ITaskArea>`
   display: grid;
   min-height: 50px;
   padding: 0 0 0 20px;
@@ -74,6 +78,17 @@ export const TaskArea = styled.div`
   align-items: center;
   border: 1px solid #cecece;
   border-radius: 5px;
+  input {
+    background-color: aliceblue;
+    border: none;
+    color: black;
+  }
+  span {
+    text-decoration: ${(props) =>
+      props.$finished == false ? "line-through" : "none"};
+
+    color: ${(props) => (props.$finished == false ? "#cecece" : "black")};
+  }
   div {
     display: grid;
     height: 30px;
@@ -83,7 +98,13 @@ export const TaskArea = styled.div`
   }
 `;
 
-export const FinishTask = styled.button`
+export const FinishTaskButton = styled.button`
+  background-color: var(--regular-green);
+  border: none;
+  border-radius: 5px;
+`;
+
+export const EditTaskButton = styled.button`
   background-color: var(--regular-yellow);
   border: none;
   border-radius: 5px;

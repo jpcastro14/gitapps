@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { ContentArea, FinishTask, InputArea, TaskArea, TaskDivider, TitleDiv, TodoContainer } from "./styles";
+import { ContentArea, EditTaskButton, FinishTaskButton, InputArea, TaskArea, TaskDivider, TitleDiv, TodoContainer } from "./styles";
 import { useForm } from "react-hook-form";
-import useId from "@mui/material/utils/useId";
 
 type TTask = {
     id: string,
     task: string
+    state: boolean
 }
 
 function TodoApp() {
@@ -17,7 +17,7 @@ function TodoApp() {
 
     function createTask() {
         const values = getValues()
-        setTaskItem([...taskItem, { id: id, task: values.task }])
+        setTaskItem([...taskItem, { id: id, task: values.task, state: true }])
         resetField("task")
         console.log(values);
     }
@@ -26,7 +26,8 @@ function TodoApp() {
 
         setTaskItem(taskItem.filter((item) => item.id !== id))
         //const finished = taskItem.filter((item) => item.id == id)
-        setFinishedTask([...finishedTask, { id: id, task: task }])
+        setFinishedTask([...finishedTask, { id: id, task: task, state: false }])
+
     }
 
 
@@ -44,18 +45,19 @@ function TodoApp() {
                     <TaskArea>
                         <span key={id}>{item.task}</span>
                         <div>
-                            <FinishTask onClick={() => removeTask(item.id, item.task)}>Concluir</FinishTask>
-                            <button>Editar</button>
+                            <FinishTaskButton onClick={() => removeTask(item.id, item.task)}>Concluir</FinishTaskButton>
+                            <EditTaskButton>Editar</EditTaskButton>
                         </div>
                     </TaskArea>) : ""}
                 <TaskDivider>Tarefas concluidas</TaskDivider>
-                {finishedTask.map((item) => <TaskArea>
-                    <span key={id}>{item.task}</span>
-                    <div>
-                        <FinishTask onClick={() => removeTask(item.id, item.task)}>Concluir</FinishTask>
-                        <button>Editar</button>
-                    </div>
-                </TaskArea>)}
+                {finishedTask.map((item) =>
+                    <TaskArea $finished={item.state} >
+                        <span key={id}>{item.task}</span>
+                        <div>
+                            <FinishTaskButton onClick={() => removeTask(item.id, item.task)}>Concluir</FinishTaskButton>
+                            <EditTaskButton>Editar</EditTaskButton>
+                        </div>
+                    </TaskArea>)}
             </ContentArea>
 
         </TodoContainer>

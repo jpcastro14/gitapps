@@ -5,30 +5,49 @@ import { useForm } from "react-hook-form";
 type TTask = {
     id: string,
     task: string
-    active?: boolean
+    isEditing: boolean
+    $finished?: boolean;
 }
 
 function TodoApp() {
 
     const { register, handleSubmit, getValues, resetField, formState: { errors } } = useForm()
-    const id = crypto.randomUUID()
     const [taskItem, setTaskItem] = useState<TTask[]>([])
     const [finishedTask, setFinishedTask] = useState<TTask[]>([])
-    const [editable, setEditable] = useState<boolean>(false)
+    const id = crypto.randomUUID()
 
     function createTask() {
         const values = getValues()
-        setTaskItem([...taskItem, { id: id, task: values.task, active: true }])
+        setTaskItem([...taskItem, { id: id, task: values.task, isEditing: false }])
         resetField("task")
-        console.log(values);
+        //console.log(values);
     }
 
-    function removeTask(id: string, task: string) {
-
+    function removeTask(id: string, isEditing: boolean, task: string) {
         setTaskItem(taskItem.filter((item) => item.id !== id))
-        setFinishedTask([...finishedTask, { id: id, task: task, active: false }])
+        setFinishedTask([...finishedTask, { id: id, isEditing: !isEditing, $finished: true, task: task }])
+    }
+
+    function UpdateTask(idToUpdate: string, isEditing: boolean) {
+        const updatedTask = getValues()
+
+        setTaskItem(prevState =>
+            prevState.map(obj =>
+                obj.id == idToUpdate ? { ...obj, task: updatedTask.editTask, isEditing: !isEditing } : obj
+            )
+        )
+    }
+
+    function ToggleEdit(idToUpdate: string, isEditing: boolean) {
+
+        setTaskItem(prevState =>
+            prevState.map(obj =>
+                obj.id == idToUpdate ? { ...obj, isEditing: !isEditing } : obj
+            )
+        )
 
     }
+
 
 
     return (
@@ -41,21 +60,27 @@ function TodoApp() {
             {errors?.task?.type === "required" && (<p style={{ color: "red" }}>Preencha o campo "Tarefa"</p>)}
 
             <ContentArea>
-                {taskItem.length ? taskItem.map((item, id) =>
-                    <TaskArea>
-                        <input value={item.task} disabled={item.active} />
+                {taskItem.length ? taskItem.map((item, index) =>
+                    <TaskArea key={index} onClick={() => console.log(item.task)
+                    } >
+                        {item.isEditing
+                            ? <input placeholder="Editar tarefa" defaultValue={item.task} {...register('editTask')} />
+                            : <p>{item.task}</p>}
                         <div>
-                            <FinishTaskButton onClick={() => removeTask(item.id, item.task)}>Concluir</FinishTaskButton>
-                            <EditTaskButton>Editar</EditTaskButton>
+                            <FinishTaskButton onClick={() => removeTask(item.id, item.isEditing, item.task)}>Concluir</FinishTaskButton>
+                            {item.isEditing
+                                ? <EditTaskButton onClick={() => UpdateTask(item.id, item.isEditing)} >SALVAR!</EditTaskButton>
+                                : <EditTaskButton onClick={() => UpdateTask(item.id, item.isEditing)}>Editar essa merda</EditTaskButton>
+                            }
+
                         </div>
                     </TaskArea>) : ""}
                 <TaskDivider>Tarefas concluidas</TaskDivider>
-                {finishedTask.map((item) =>
-                    <TaskArea $finished={item.active} >
+                {finishedTask.map((item, index) =>
+                    <TaskArea $finished={item.$finished} >
                         <span key={id}>{item.task}</span>
                         <div>
-                            <FinishTaskButton onClick={() => removeTask(item.id, item.task)}>Concluir</FinishTaskButton>
-                            <EditTaskButton>Editar</EditTaskButton>
+                            <span>Tarefa finalizada</span>
                         </div>
                     </TaskArea>)}
             </ContentArea>

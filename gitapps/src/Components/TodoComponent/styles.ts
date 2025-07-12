@@ -40,8 +40,8 @@ export const InputArea = styled.div`
   grid-template-rows: 100%;
   input {
     height: 50%;
-    background-color: var(--white);
-    border: none;
+    background-color: white;
+    border: 1px solid black;
     border-radius: 5px;
     color: var(--blue);
     font-size: 20px;
@@ -79,15 +79,19 @@ export const TaskArea = styled.div<ITaskArea>`
   border: 1px solid #cecece;
   border-radius: 5px;
   input {
-    background-color: aliceblue;
-    border: none;
+    background-color: white;
+    border: 1px solid #eee;
+    padding-left: 10px;
+    border-radius: 5px;
+    height: 30px;
     color: black;
+    margin-right: 20px;
   }
   span {
     text-decoration: ${(props) =>
-      props.$finished == false ? "line-through" : "none"};
+      props.$finished == true ? "line-through" : "none"};
 
-    color: ${(props) => (props.$finished == false ? "#cecece" : "black")};
+    color: ${(props) => (props.$finished == true ? "#cecece" : "black")};
   }
   div {
     display: grid;
@@ -95,6 +99,17 @@ export const TaskArea = styled.div<ITaskArea>`
     grid-template-columns: 40% 40%;
     grid-template-rows: 100%;
     gap: 10%;
+    text-align: center;
+    span {
+      background-color: var(--regular-red);
+      width: 100%;
+      text-decoration: none;
+      color: aliceblue;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 `;
 

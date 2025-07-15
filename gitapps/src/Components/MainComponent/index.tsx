@@ -56,6 +56,40 @@ function MainComponent() {
             </CardActions>
           </CardTest>
 
+          <CardTest variant="elevation">
+            <CardContent
+              style={{
+                textAlign: "start",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "black",
+                  fontSize: 20,
+                  fontWeight: 300,
+                  marginBottom: 2,
+                }}
+              >
+                Livro de receitas
+              </Typography>
+              <Typography
+                sx={{
+                  color: "gray",
+                  fontSize: 20,
+                }}
+              >
+                Um livro de receitas para fazer um jantar elaborado para os amigos, ou para agilizar a sua semana com pratos práticos
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button onClick={() => navigate('/recipe')} variant="outlined" fullWidth>
+                Testar
+              </Button>
+            </CardActions>
+          </CardTest>
+
           <Card>b</Card>
           <Card>c</Card>
           <Card>d</Card>

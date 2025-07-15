@@ -5,6 +5,7 @@ import { ProtectedLayout } from "./Components/ProtectedLayout";
 import MainComponent from "./Components/MainComponent";
 import { UserProvider } from "./DataContext/UserContext";
 import TodoApp from "./Components/TodoComponent";
+import RecipeApp from "./Components/RecipeComponent";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
               <Route
                 path="/todo"
                 element={<TodoApp />}
+              />
+              <Route
+                path="/recipe"
+                element={<RecipeApp />}
               />
             </Routes>
           </BrowserRouter>

@@ -23,6 +23,12 @@
   --lighter-red: #fd8387;
   --regular-yellow: #ffca2c;
   --regular-green: #50cf44;
+
+  --form-red: #db5461;
+  --form-yellow: #ffc07f;
+  --form-black: #363732;
+  --form-blue: #8da9c4;
+  --form-white: #ffffff;
 }
 
 a {

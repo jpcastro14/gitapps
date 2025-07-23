@@ -1,12 +1,15 @@
 import { BottomSection, Container, MidSection, TopNav } from "./styles";
-
+import { useNavigate } from "react-router-dom";
 
 function RecipeApp() {
+
+    const navigate = useNavigate()
+
     return (
         <Container>
             <TopNav>
                 <p> Livrinho de <span>receitas</span></p>
-                <button>Criar Receita</button>
+                <button onClick={() => navigate("/recipeform")}>Criar Receita</button>
             </TopNav>
             <MidSection>
                 <p>Encontrar receitas</p>

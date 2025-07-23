@@ -6,6 +6,7 @@ import MainComponent from "./Components/MainComponent";
 import { UserProvider } from "./DataContext/UserContext";
 import TodoApp from "./Components/TodoComponent";
 import RecipeApp from "./Components/RecipeComponent";
+import RecipeForm from "./Components/RecipeComponent/RecipeForm";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
               <Route
                 path="/recipe"
                 element={<RecipeApp />}
+              />
+              <Route
+                path="/recipeform"
+                element={<RecipeForm />}
               />
             </Routes>
           </BrowserRouter>

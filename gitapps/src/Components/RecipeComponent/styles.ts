@@ -69,11 +69,7 @@ export const MidSection = styled.div`
 
 export const BottomSection = styled.div`
   background-color: var(--form-red);
-  height: 40px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  left: 20px;
+  position: static;
   display: flex;
   justify-content: center;
   align-items: center;

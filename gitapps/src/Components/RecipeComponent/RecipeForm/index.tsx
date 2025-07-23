@@ -41,17 +41,17 @@ function RecipeForm() {
                         <TextField fullWidth variant="outlined" size="small" {...register('name', { required: true })} />
                     </Grid2>
 
-                    <Grid2 size={0.5} container  >
+                    <Grid2 size={{ xs: 1, md: 0.5 }} container  >
                         <FormLabel >Preparo</FormLabel>
                         <TextField type="text" fullWidth variant="outlined" size="small" {...register("prepareTime", { required: true })} />
                     </Grid2>
 
-                    <Grid2 size={1} container >
-                        <FormLabel >Dificuldade</FormLabel>
+                    <Grid2 size={{ xs: 1, md: 1 }} container >
+                        <FormLabel>Dificuldade</FormLabel>
                         <Slider defaultValue={0} min={0} max={5} step={1} valueLabelDisplay="on"  {...register("dificulty")} />
                     </Grid2>
 
-                    <Grid2 size={0.5} container  >
+                    <Grid2 size={1} container  >
                         <FormLabel>Vegano?</FormLabel>
                         <Checkbox size="small" {...register('isVegan', { required: true })} />
                     </Grid2>

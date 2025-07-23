@@ -6,6 +6,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: 20% 70% 10%;
   grid-template-columns: 100%;
+  min-width: 700px;
 `;
 
 export const TopNav = styled.div`
@@ -44,12 +45,12 @@ export const MidSection = styled.div`
   font-family: poppins;
   align-items: center;
   p {
-    color: var(--form-red);
+    color: var(--form-black);
+    font-size: 25px;
   }
   span {
     width: 400px;
     margin-top: 20px;
-    font-size: smaller;
     color: var(--form-red);
   }
   input {

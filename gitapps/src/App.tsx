@@ -7,6 +7,7 @@ import { UserProvider } from "./DataContext/UserContext";
 import TodoApp from "./Components/TodoComponent";
 import RecipeApp from "./Components/RecipeComponent";
 import RecipeForm from "./Components/RecipeComponent/RecipeForm";
+import RecipeList from "./Components/RecipeComponent/RecipeList";
 
 function App() {
   return (
@@ -19,18 +20,10 @@ function App() {
                 path="/"
                 element={<ProtectedLayout children={<MainComponent />} />}
               />
-              <Route
-                path="/todo"
-                element={<TodoApp />}
-              />
-              <Route
-                path="/recipe"
-                element={<RecipeApp />}
-              />
-              <Route
-                path="/recipeform"
-                element={<RecipeForm />}
-              />
+              <Route path="/todo" element={<TodoApp />} />
+              <Route path="/recipe" element={<RecipeApp />} />
+              <Route path="/recipeform" element={<RecipeForm />} />
+              <Route path="/recipelist" element={<RecipeList />} />
             </Routes>
           </BrowserRouter>
         </UserProvider>

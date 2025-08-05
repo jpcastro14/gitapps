@@ -62,9 +62,10 @@ function RecipeForm() {
             <FormLabel>Dificuldade</FormLabel>
             <Slider
               defaultValue={0}
-              min={0}
+              min={[0, 2]}
               max={5}
               step={1}
+              value={50}
               valueLabelDisplay="on"
               {...register("dificulty")}
             />

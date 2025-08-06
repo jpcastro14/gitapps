@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { Container } from "./styles";
+import { OverContainer, SearchField, VeganButton } from "./styles";
+import { TopDecorativeBar, TopFormNav } from "../RecipeForm/styles";
 import axios from "axios";
+import { Button, FormLabel, Grid2, TextField, Container } from "@mui/material";
 
 interface IRecipe {
   name: string;
@@ -25,11 +27,18 @@ function Recipelist() {
   }, []);
 
   return (
-    <Container>
-      {recipes?.map((item) => (
-        <p style={{ color: "black" }}>{item.name}</p>
-      ))}
-    </Container>
+    <OverContainer>
+      <TopDecorativeBar />
+      <SearchField>
+        <FormLabel
+          style={{ fontFamily: "Poppins", fontSize: "50px", color: "black" }}
+        >
+          Resultados
+        </FormLabel>
+        <VeganButton />
+        <input type="text" />
+      </SearchField>
+    </OverContainer>
   );
 }
 

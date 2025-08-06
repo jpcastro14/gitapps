@@ -12,11 +12,11 @@ import { useState } from "react";
 
 interface IRecipe {
   name: string;
-  prepareTime: number;
   dificulty: number;
   isVegan: boolean;
   ingredients: string;
   servings: number;
+  prepareTime: number;
   prepareSteps: string;
 }
 
@@ -65,7 +65,7 @@ function RecipeForm() {
           <Grid2 size={{ xs: 1, sm: 1, md: 1 }} container>
             <FormLabel>Tempo de preparo</FormLabel>
             <TextField
-              type="text"
+              type="number"
               fullWidth
               variant="outlined"
               size="small"
@@ -76,6 +76,7 @@ function RecipeForm() {
           <Grid2 size={{ xs: 1, md: 1 }} container>
             <FormLabel>Dificuldade</FormLabel>
             <Slider
+              type="number"
               min={0}
               max={5}
               step={1}

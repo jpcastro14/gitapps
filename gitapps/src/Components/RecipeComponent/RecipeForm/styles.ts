@@ -41,3 +41,5 @@ export const TopDecorativeBar = styled.div`
   height: 40px;
   background-color: var(--form-red);
 `;
+
+

@@ -12,10 +12,11 @@ import { useState } from "react";
 
 interface IRecipe {
   name: string;
-  prepareTime: string;
-  dificulty: string;
+  prepareTime: number;
+  dificulty: number;
   isVegan: boolean;
   ingredients: string;
+  servings: number;
   prepareSteps: string;
 }
 
@@ -26,7 +27,9 @@ function RecipeForm() {
 
   const logRecipe = (d: IRecipe) => {
     setNewRecipe(d);
+
     console.log(newRecipe);
+    console.log("teste");
   };
 
   return (
@@ -36,8 +39,8 @@ function RecipeForm() {
         <TopFormNav>
           <p>Criar sua</p> <span> receita</span>
         </TopFormNav>
-        <Grid2 container spacing={1} columns={{ xs: 1, md: 4 }}>
-          <Grid2 size={2} container>
+        <Grid2 container spacing={1} columns={{ xs: 1, sm: 1, md: 4 }}>
+          <Grid2 size={{ xs: 1, sm: 1, md: 4 }} container>
             <FormLabel>Nome da receita</FormLabel>
             <TextField
               fullWidth
@@ -46,9 +49,21 @@ function RecipeForm() {
               {...register("name", { required: true })}
             />
           </Grid2>
+          {/* ------------------------------ */}
 
-          <Grid2 size={{ xs: 1, md: 0.5 }} container>
-            <FormLabel>Preparo</FormLabel>
+          <Grid2 size={{ xs: 1, sm: 1, md: 2 }} container>
+            <FormLabel>Serve quantas pessoas</FormLabel>
+            <TextField
+              fullWidth
+              size="small"
+              type="number"
+              {...register("servings", { required: false })}
+            />
+          </Grid2>
+          {/* ------------------------------ */}
+
+          <Grid2 size={{ xs: 1, sm: 1, md: 1 }} container>
+            <FormLabel>Tempo de preparo</FormLabel>
             <TextField
               type="text"
               fullWidth
@@ -61,21 +76,11 @@ function RecipeForm() {
           <Grid2 size={{ xs: 1, md: 1 }} container>
             <FormLabel>Dificuldade</FormLabel>
             <Slider
-              defaultValue={0}
-              min={[0, 2]}
+              min={0}
               max={5}
               step={1}
-              value={50}
               valueLabelDisplay="on"
               {...register("dificulty")}
-            />
-          </Grid2>
-
-          <Grid2 size={1} container>
-            <FormLabel>Vegano?</FormLabel>
-            <Checkbox
-              size="small"
-              {...(register("isVegan"), { required: false })}
             />
           </Grid2>
 
@@ -102,6 +107,13 @@ function RecipeForm() {
               maxRows={4}
               size="medium"
               {...register("prepareSteps")}
+            />
+          </Grid2>
+          <Grid2 size={{ sm: 1, md: 4, lg: 4 }} alignSelf={"center"}>
+            <FormLabel>Receita vegana</FormLabel>
+            <Checkbox
+              size="small"
+              {...register("isVegan", { required: false })}
             />
           </Grid2>
 

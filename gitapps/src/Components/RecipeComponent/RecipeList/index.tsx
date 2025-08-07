@@ -1,8 +1,20 @@
 import { useEffect, useState } from "react";
-import { OverContainer, SearchField, VeganButton } from "./styles";
+import {
+  OverContainer,
+  RecipeCard,
+  RecipeCardContainer,
+  RecipeImage,
+  RecipeName,
+  RecipeProps,
+  RecipePropsDiv,
+  SearchField,
+  VeganButton,
+} from "./styles";
 import { TopDecorativeBar, TopFormNav } from "../RecipeForm/styles";
 import axios from "axios";
-import { Button, FormLabel, Grid2, TextField, Container } from "@mui/material";
+import { FormLabel } from "@mui/material";
+import clock from "../../../assets/clock.svg";
+import person from "../../../assets/person.svg";
 
 interface IRecipe {
   name: string;
@@ -38,6 +50,24 @@ function Recipelist() {
         <VeganButton />
         <input type="text" />
       </SearchField>
+      <RecipeCardContainer>
+        {recipes?.map((recipe) => (
+          <RecipeCard>
+            <RecipeImage />
+            <RecipeName>{recipe.name}</RecipeName>
+            <RecipePropsDiv>
+              <RecipeProps>
+                <img src={person} />
+                <span>{recipe.dificulty}</span>
+              </RecipeProps>
+              <RecipeProps>
+                <img src={clock} />
+                <span> Fica pronto em {recipe.prepareTime}</span>
+              </RecipeProps>
+            </RecipePropsDiv>
+          </RecipeCard>
+        ))}
+      </RecipeCardContainer>
     </OverContainer>
   );
 }

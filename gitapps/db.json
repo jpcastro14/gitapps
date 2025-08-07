@@ -3,7 +3,7 @@
     {
       "name": "Arroz de Brócolis",
       "prepareTime": "25 minutos",
-      "dificulty": "Fácil",
+      "dificulty": "Extremamente dificil",
       "isVegan": true,
       "ingredients": "1 xícara de arroz, 1 brócolis médio, 1 cebola, 2 dentes de alho, azeite, sal, pimenta",
       "prepareSteps": "1. Cozinhe o arroz normalmente. 2. Refogue a cebola e o alho no azeite. 3. Adicione o brócolis picado e cozinhe até ficar macio. 4. Misture com o arroz e tempere com sal e pimenta."
@@ -31,6 +31,14 @@
       "isVegan": false,
       "ingredients": "300g de cogumelos frescos, 1 cebola, 2 dentes de alho, 1 colher de sopa de mostarda, 1 caixa de creme de leite, molho de tomate, óleo, sal",
       "prepareSteps": "1. Refogue a cebola e o alho no óleo. 2. Adicione os cogumelos fatiados e cozinhe. 3. Acrescente a mostarda, o molho de tomate e o creme de leite. 4. Tempere com sal e cozinhe por mais 5 minutos."
+    },
+    {
+      "name": "Salada de Quinoa",
+      "prepareTime": "20 minutos",
+      "dificulty": "Fácil",
+      "isVegan": true,
+      "ingredients": "1 xícara de quinoa cozida, 1 pepino, 1 tomate, 1 abacate, suco de limão, azeite, sal",
+      "prepareSteps": "1. Misture a quinoa cozida com os vegetais picados. 2. Tempere com suco de limão, azeite e sal a gosto."
     },
     {
       "name": "Salada de Quinoa",

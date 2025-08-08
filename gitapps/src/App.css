@@ -4,6 +4,7 @@
   width: 100%;
   text-align: center;
   display: flex;
+  height: auto;
   background-color: var(--darker-blue);
   @media (max-width: 1000px) {
     padding: 0;

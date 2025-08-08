@@ -9,16 +9,7 @@ import {
 import { Container, TopDecorativeBar, TopFormNav } from "./styles";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-
-interface IRecipe {
-  name: string;
-  dificulty: number;
-  isVegan: boolean;
-  ingredients: string;
-  servings: number;
-  prepareTime: number;
-  prepareSteps: string;
-}
+import { IRecipe } from "../types";
 
 function RecipeForm() {
   const [newRecipe, setNewRecipe] = useState<IRecipe>({} as IRecipe);

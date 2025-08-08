@@ -1,11 +1,17 @@
 import styled from "styled-components";
 
+
+type ButtonProps = {
+  $veganColor?: boolean;
+}
+
 export const OverContainer = styled.div`
   background-color: #f3f3f3;
   padding: 20px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  min-height: 100dvh;
 `;
 
 export const SearchField = styled.div`
@@ -28,16 +34,18 @@ export const SearchField = styled.div`
     border-radius: 50px;
     border: none;
     filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.35));
+    color: black;
+    padding-left: 20px;
+    font-size: 20px;
   }
 `;
 
-export const VeganButton = styled.button`
+export const VeganButton = styled.button<ButtonProps>`
   height: 50px;
   width: 50px;
   border-radius: 500px;
-  background-color: aliceblue;
+  background-color:${(props) => props.$veganColor ? "var(--regular-green)" : "white"};
   border: none;
-  background-color: white;
   filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.35));
 `;
 
@@ -83,7 +91,7 @@ export const RecipeProps = styled.div`
   img{
     margin-right: 20px;
     height: 40px;
-    border: 3px solid var(--regular-red);
+    border: 3px solid var(--form-blue);
     border-radius: 8px;
     padding: 6px;
     

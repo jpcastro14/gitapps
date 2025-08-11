@@ -1,204 +1,40 @@
 {
   "recipes": [
     {
-      "name": "Pão de Queijo Vegano",
-      "description": "Versão vegana do clássico mineiro, crocante por fora e macio por dentro.",
-      "dificulty": 3,
-      "isVegan": true,
-      "ingredients": "2 xícaras de polvilho doce, 1 xícara de água, 1/3 xícara de óleo, 1/2 xícara de leite vegetal, 1 colher (chá) de sal",
-      "servings": 15,
-      "prepareTime": 40,
-      "prepareSteps": "Misture todos os ingredientes até formar uma massa homogênea. Modele bolinhas e asse em forno pré-aquecido a 180°C por 25-30 minutos."
+      "id": "6674",
+      "data": {
+        "name": "aaaaaaaaaaaaaaaa",
+        "servings": "4",
+        "prepareTime": "4",
+        "dificulty": "1",
+        "ingredients": "4aaaaaaaaaa",
+        "prepareSteps": "aaaaaaaaaaaaaaaa",
+        "isVegan": true
+      }
     },
     {
-      "name": "Risoto de Cogumelos",
-      "description": "Cremoso e aromático, feito com cogumelos frescos e vinho branco.",
-      "dificulty": 4,
-      "isVegan": false,
-      "ingredients": "1 xícara de arroz arbóreo, 200g de cogumelos, 1 cebola, 2 dentes de alho, 1/2 xícara de vinho branco, 1L de caldo de legumes, 2 colheres (sopa) de manteiga",
-      "servings": 4,
-      "prepareTime": 35,
-      "prepareSteps": "Refogue cebola e alho, acrescente os cogumelos e o arroz. Adicione o vinho e depois o caldo aos poucos, mexendo até ficar cremoso."
+      "id": "9a1a",
+      "data": {
+        "name": "Piruliro baby",
+        "servings": "1888",
+        "prepareTime": "888",
+        "dificulty": "1",
+        "ingredients": "ooooooooooooooooo",
+        "prepareSteps": "ooooooooooooooooo",
+        "isVegan": true
+      }
     },
     {
-      "name": "Bolo de Chocolate Simples",
-      "description": "Clássico bolo de chocolate fofinho e úmido.",
-      "dificulty": 2,
-      "isVegan": false,
-      "ingredients": "2 xícaras de farinha, 1 xícara de açúcar, 1/2 xícara de cacau, 1 xícara de leite, 2 ovos, 1/2 xícara de óleo, 1 colher (sopa) de fermento",
-      "servings": 8,
-      "prepareTime": 50,
-      "prepareSteps": "Misture os ingredientes secos, depois os líquidos. Leve ao forno pré-aquecido a 180°C por 35 minutos."
-    },
-    {
-      "name": "Salada Caesar Vegana",
-      "description": "Salada Caesar sem ingredientes animais, com croutons e molho cremoso.",
-      "dificulty": 2,
-      "isVegan": true,
-      "ingredients": "1 alface romana, 1 xícara de croutons, 1/2 abacate, 2 colheres (sopa) de levedura nutricional, 1 dente de alho, suco de limão, sal",
-      "servings": 2,
-      "prepareTime": 15,
-      "prepareSteps": "Misture o abacate, alho, levedura e limão para o molho. Monte a salada com os croutons e regue."
-    },
-    {
-      "name": "Frango Grelhado com Ervas",
-      "description": "Peito de frango temperado com ervas e grelhado.",
-      "dificulty": 1,
-      "isVegan": false,
-      "ingredients": "2 peitos de frango, 1 colher (sopa) de alecrim, 1 colher (sopa) de tomilho, sal, pimenta, azeite",
-      "servings": 2,
-      "prepareTime": 25,
-      "prepareSteps": "Tempere o frango com as ervas, sal e pimenta. Grelhe em fogo médio por 8 minutos de cada lado."
-    },
-    {
-      "name": "Sopa de Abóbora",
-      "description": "Sopa cremosa e reconfortante de abóbora com gengibre.",
-      "dificulty": 2,
-      "isVegan": true,
-      "ingredients": "500g de abóbora, 1 cebola, 1 dente de alho, 1 colher (chá) de gengibre ralado, 1L de água ou caldo, sal, pimenta",
-      "servings": 4,
-      "prepareTime": 30,
-      "prepareSteps": "Cozinhe a abóbora com os temperos, bata no liquidificador e ajuste os temperos."
-    },
-    {
-      "name": "Omelete de Espinafre",
-      "description": "Omelete leve e nutritivo com espinafre fresco.",
-      "dificulty": 1,
-      "isVegan": false,
-      "ingredients": "3 ovos, 1 xícara de espinafre, 1/4 xícara de queijo ralado, sal, pimenta, azeite",
-      "servings": 1,
-      "prepareTime": 10,
-      "prepareSteps": "Bata os ovos, misture o espinafre e o queijo. Frite em frigideira antiaderente."
-    },
-    {
-      "name": "Brigadeiro Vegano",
-      "description": "Versão vegana do doce brasileiro, feito com leite condensado vegetal.",
-      "dificulty": 2,
-      "isVegan": true,
-      "ingredients": "1 lata de leite condensado vegetal, 3 colheres (sopa) de cacau em pó, 1 colher (sopa) de manteiga vegetal",
-      "servings": 15,
-      "prepareTime": 20,
-      "prepareSteps": "Misture tudo em uma panela e cozinhe em fogo baixo até desgrudar do fundo. Enrole as bolinhas."
-    },
-    {
-      "name": "Lasanha de Berinjela",
-      "description": "Lasanha sem massa, com camadas de berinjela assada e molho de tomate.",
-      "dificulty": 3,
-      "isVegan": true,
-      "ingredients": "2 berinjelas, 2 xícaras de molho de tomate, 1 xícara de queijo vegano ralado, azeite, sal",
-      "servings": 6,
-      "prepareTime": 45,
-      "prepareSteps": "Corte as berinjelas em fatias e asse. Monte em camadas com molho e queijo. Leve ao forno por 20 minutos."
-    },
-    {
-      "name": "Cuscuz Paulista",
-      "description": "Cuscuz tradicional com atum, ovos e legumes.",
-      "dificulty": 3,
-      "isVegan": false,
-      "ingredients": "2 xícaras de farinha de milho, 1 lata de atum, 2 ovos cozidos, 1 tomate, 1/2 pimentão, azeitonas, ervilhas, sal",
-      "servings": 6,
-      "prepareTime": 40,
-      "prepareSteps": "Cozinhe a farinha com água e sal. Misture os outros ingredientes e molde em forma úmida."
-    },
-    {
-      "name": "Panqueca de Banana",
-      "description": "Panqueca doce e rápida, feita com banana madura.",
-      "dificulty": 1,
-      "isVegan": true,
-      "ingredients": "1 banana, 1/2 xícara de aveia, 1/2 xícara de leite vegetal, 1 colher (chá) de canela",
-      "servings": 1,
-      "prepareTime": 10,
-      "prepareSteps": "Bata tudo no liquidificador e frite em frigideira antiaderente."
-    },
-    {
-      "name": "Strogonoff de Cogumelos",
-      "description": "Versão vegetariana do strogonoff, cremoso e saboroso.",
-      "dificulty": 3,
-      "isVegan": false,
-      "ingredients": "300g de cogumelos, 1 cebola, 1 colher (sopa) de mostarda, 1/2 xícara de creme de leite, 1 colher (sopa) de ketchup",
-      "servings": 4,
-      "prepareTime": 25,
-      "prepareSteps": "Refogue os cogumelos e a cebola, acrescente os outros ingredientes e cozinhe por 10 minutos."
-    },
-    {
-      "name": "Tofu Grelhado",
-      "description": "Tofu marinado e grelhado, perfeito para saladas ou acompanhamentos.",
-      "dificulty": 2,
-      "isVegan": true,
-      "ingredients": "200g de tofu, 2 colheres (sopa) de shoyu, 1 colher (sopa) de melado, 1 dente de alho, pimenta",
-      "servings": 2,
-      "prepareTime": 20,
-      "prepareSteps": "Marine o tofu por 15 minutos e grelhe em frigideira até dourar."
-    },
-    {
-      "name": "Pudim de Leite Condensado",
-      "description": "Clássico pudim de leite condensado com calda de caramelo.",
-      "dificulty": 4,
-      "isVegan": false,
-      "ingredients": "1 lata de leite condensado, 2 ovos, 1 xícara de açúcar (para a calda)",
-      "servings": 8,
-      "prepareTime": 60,
-      "prepareSteps": "Derreta o açúcar para a calda. Bata os outros ingredientes e asse em banho-maria por 45 minutos."
-    },
-    {
-      "name": "Quiche de Legumes",
-      "description": "Torta salgada com massa crocante e recheio de legumes.",
-      "dificulty": 3,
-      "isVegan": false,
-      "ingredients": "1 massa folhada, 1 abobrinha, 1 cenoura, 2 ovos, 1/2 xícara de creme de leite, queijo ralado",
-      "servings": 6,
-      "prepareTime": 50,
-      "prepareSteps": "Forre uma forma com a massa, acrescente os legumes e o creme de ovos. Asse por 30 minutos."
-    },
-    {
-      "name": "Smoothie de Morango",
-      "description": "Bebida cremosa e refrescante com morangos e iogurte.",
-      "dificulty": 1,
-      "isVegan": false,
-      "ingredients": "1 xícara de morangos, 1/2 xícara de iogurte natural, 1/2 xícara de leite, 1 colher (sopa) de mel",
-      "servings": 1,
-      "prepareTime": 5,
-      "prepareSteps": "Bata todos os ingredientes no liquidificador até ficar homogêneo."
-    },
-    {
-      "name": "Feijoada Vegetariana",
-      "description": "Versão sem carne da feijoada, com legumes e temperos robustos.",
-      "dificulty": 4,
-      "isVegan": true,
-      "ingredients": "2 xícaras de feijão preto, 1 cenoura, 1 batata-doce, 1 pimentão, 2 folhas de louro, cominho, pimenta",
-      "servings": 6,
-      "prepareTime": 90,
-      "prepareSteps": "Cozinhe o feijão com os temperos e legumes até ficar macio. Sirva com couve refogada."
-    },
-    {
-      "name": "Bolo de Cenoura com Cobertura",
-      "description": "Bolo úmido de cenoura com cobertura de chocolate.",
-      "dificulty": 3,
-      "isVegan": false,
-      "ingredients": "3 cenouras, 3 ovos, 1 xícara de óleo, 2 xícaras de farinha, 1 xícara de açúcar, 1 colher (sopa) de fermento. Cobertura: 1/2 xícara de chocolate em pó, 1/2 xícara de leite, 1 colher (sopa) de manteiga",
-      "servings": 10,
-      "prepareTime": 60,
-      "prepareSteps": "Bata os ingredientes no liquidificador, asse por 40 minutos. Prepare a cobertura e derrame sobre o bolo frio."
-    },
-    {
-      "name": "Ratatouille",
-      "description": "Prato francês com berinjela, abobrinha e tomate assados.",
-      "dificulty": 3,
-      "isVegan": true,
-      "ingredients": "1 berinjela, 1 abobrinha, 2 tomates, 1 cebola, 2 dentes de alho, azeite, manjericão",
-      "servings": 4,
-      "prepareTime": 50,
-      "prepareSteps": "Corte os legumes em rodelas, arrume em uma assadeira e regue com azeite e temperos. Asse por 40 minutos."
-    },
-    {
-      "name": "Creme de Milho",
-      "description": "Sopa cremosa e doce de milho verde.",
-      "dificulty": 2,
-      "isVegan": false,
-      "ingredients": "2 latas de milho verde, 1 cebola, 2 xícaras de leite, 1 colher (sopa) de manteiga, sal",
-      "servings": 4,
-      "prepareTime": 25,
-      "prepareSteps": "Refogue a cebola, acrescente o milho e o leite. Bata no liquidificador e aqueça novamente."
+      "id": "92fe",
+      "data": {
+        "name": "Receita do Lucas Santos",
+        "servings": "18",
+        "prepareTime": "18",
+        "dificulty": "4",
+        "ingredients": "Lucas santos",
+        "prepareSteps": "Kamilynha",
+        "isVegan": true
+      }
     }
   ]
 }

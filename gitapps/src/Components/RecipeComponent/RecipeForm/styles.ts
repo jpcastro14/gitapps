@@ -4,7 +4,6 @@ export const Container = styled.div`
   background-color: #f3f3f3;
   padding: 20px;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   div {
     color: red;
@@ -40,6 +39,10 @@ export const TopDecorativeBar = styled.div`
   margin: -20px -20px 20px -20px;
   height: 40px;
   background-color: var(--form-red);
+  @media (max-width:1200px) {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 

@@ -3,6 +3,7 @@ import {
   OverContainer,
   RecipeCard,
   RecipeCardContainer,
+  RecipeCode,
   RecipeImage,
   RecipeName,
   RecipeProps,
@@ -36,14 +37,14 @@ function Recipelist() {
     //let parameter = event.target.value;
 
     setFilteredRecipes(
-      recipes?.filter((item) => item.name.startsWith(event.target.value))
+      recipes?.filter((item) => item.data.name.startsWith(event.target.value))
     );
 
     console.log(filteredRecipes);
   }
 
   function veganFIlter(event: React.MouseEvent<HTMLButtonElement>) {
-    setFilteredRecipes(recipes?.filter((item) => item.isVegan == true));
+    setFilteredRecipes(recipes?.filter((item) => item.data.isVegan == true));
     setVeganColor(!vegancolor);
   }
 
@@ -56,11 +57,7 @@ function Recipelist() {
     <OverContainer>
       <TopDecorativeBar />
       <SearchField>
-        <FormLabel
-          style={{ fontFamily: "Poppins", fontSize: "50px", color: "black" }}
-        >
-          Resultados
-        </FormLabel>
+        <label>Resultados</label>
         {vegancolor == false ? (
           <VeganButton $veganColor={vegancolor} onClick={veganFIlter} />
         ) : (
@@ -72,17 +69,20 @@ function Recipelist() {
       <RecipeCardContainer>
         {filteredRecipes
           ? filteredRecipes?.map((recipe) => (
-              <RecipeCard>
+              <RecipeCard $vegan={recipe.data.isVegan}>
                 <RecipeImage />
-                <RecipeName>{recipe.name}</RecipeName>
+                <RecipeName>{recipe.data.name}</RecipeName>
                 <RecipePropsDiv>
                   <RecipeProps>
                     <img src={person} />
-                    <span>Serve até {recipe.servings} pessoas</span>
+                    <span>Serve até {recipe.data.servings} pessoas</span>
                   </RecipeProps>
                   <RecipeProps>
                     <img src={clock} />
-                    <span> Fica pronto em {recipe.prepareTime} minutos</span>
+                    <span>
+                      {" "}
+                      Fica pronto em {recipe.data.prepareTime} minutos
+                    </span>
                   </RecipeProps>
                 </RecipePropsDiv>
               </RecipeCard>
@@ -90,17 +90,21 @@ function Recipelist() {
           : recipes?.map((recipe) => (
               <RecipeCard>
                 <RecipeImage />
-                <RecipeName>{recipe.name}</RecipeName>
+                <RecipeName>{recipe.data.name}</RecipeName>
                 <RecipePropsDiv>
                   <RecipeProps>
                     <img src={person} />
-                    <span>Serve até {recipe.servings} pessoas</span>
+                    <span>Serve até {recipe.data.servings} pessoas</span>
                   </RecipeProps>
                   <RecipeProps>
                     <img src={clock} />
-                    <span> Fica pronto em {recipe.prepareTime} minutos</span>
+                    <span>
+                      {" "}
+                      Fica pronto em {recipe.data.prepareTime} minutos
+                    </span>
                   </RecipeProps>
                 </RecipePropsDiv>
+                <RecipeCode>{recipe.id}</RecipeCode>
               </RecipeCard>
             ))}
       </RecipeCardContainer>

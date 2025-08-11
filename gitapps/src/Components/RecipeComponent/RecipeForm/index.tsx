@@ -10,17 +10,26 @@ import { Container, TopDecorativeBar, TopFormNav } from "./styles";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { IRecipe } from "../types";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function RecipeForm() {
+  const navigate = useNavigate();
   const [newRecipe, setNewRecipe] = useState<IRecipe>({} as IRecipe);
 
   const { register, handleSubmit } = useForm<IRecipe>();
 
-  const logRecipe = (d: IRecipe) => {
-    setNewRecipe(d);
-
-    console.log(newRecipe);
-    console.log("teste");
+  const logRecipe = (data: IRecipe) => {
+    axios
+      .post("http://localhost:3000/recipes/", {
+        data,
+      })
+      .then((response) => {
+        response.status == 201
+          ? navigate("/recipelist")
+          : alert("Ocorreu um erro durante a solicitação");
+      })
+      .catch((error) => alert(error));
   };
 
   return (
@@ -37,7 +46,7 @@ function RecipeForm() {
               fullWidth
               variant="outlined"
               size="small"
-              {...register("name", { required: true })}
+              {...register("data.name", { required: true })}
             />
           </Grid2>
           {/* ------------------------------ */}
@@ -48,7 +57,7 @@ function RecipeForm() {
               fullWidth
               size="small"
               type="number"
-              {...register("servings", { required: false })}
+              {...register("data.servings", { required: false })}
             />
           </Grid2>
           {/* ------------------------------ */}
@@ -60,7 +69,7 @@ function RecipeForm() {
               fullWidth
               variant="outlined"
               size="small"
-              {...register("prepareTime", { required: true })}
+              {...register("data.prepareTime", { required: true })}
             />
           </Grid2>
 
@@ -72,7 +81,7 @@ function RecipeForm() {
               max={5}
               step={1}
               valueLabelDisplay="on"
-              {...register("dificulty")}
+              {...register("data.dificulty")}
             />
           </Grid2>
 
@@ -85,7 +94,7 @@ function RecipeForm() {
               minRows={2}
               maxRows={4}
               size="medium"
-              {...register("ingredients")}
+              {...register("data.ingredients")}
             />
           </Grid2>
 
@@ -98,14 +107,14 @@ function RecipeForm() {
               minRows={2}
               maxRows={4}
               size="medium"
-              {...register("prepareSteps")}
+              {...register("data.prepareSteps")}
             />
           </Grid2>
           <Grid2 size={{ sm: 1, md: 4, lg: 4 }} alignSelf={"center"}>
             <FormLabel>Receita vegana</FormLabel>
             <Checkbox
               size="small"
-              {...register("isVegan", { required: false })}
+              {...register("data.isVegan", { required: false })}
             />
           </Grid2>
 

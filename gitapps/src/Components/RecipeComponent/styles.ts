@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
+  width: 100dvw;
   background-color: #f3f3f3;
   display: grid;
   grid-template-rows: 20% 70% 10%;
   grid-template-columns: 100%;
-  min-width: 700px;
+  min-width: 430px;
+  @media (max-width:1200px) {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    grid-template-rows:10% 50% 1% 30% auto;
+    gap: 10px;
+  }
 `;
 
 export const TopNav = styled.div`
@@ -34,6 +41,25 @@ export const TopNav = styled.div`
     font-family: Poppins;
     color: var(--form-black);
     background-color: var(--form-yellow);
+  }
+  @media (max-width:1200px) {
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    padding: 20px;
+    justify-content: center;
+    gap: 40px;
+    p{
+      padding-top: 30px;
+      font-size: 40px;
+    }
+    button{
+      margin: 30px;
+      border:1px solid var(--form-yellow);
+      background-color: navajowhite;
+      filter: opacity(0.8);
+    }
+
   }
 `;
 
@@ -64,9 +90,24 @@ export const MidSection = styled.div`
     -moz-box-shadow: 0px 10px 19px -7px rgba(0, 0, 0, 0.75);
     color: var(--form-black);
     padding: 0 20px 0 20px;
-    max-width: 500px;
+  }
+  @media (max-width:1200px) {
+    padding: 40px;
+    margin-top: 70px;
+    p{
+      font-size: 35px;
+      font-weight: 300;
+    }
+    span{
+      color: black;
+    }
+    input{
+      width: 100%;
+      
+    }
   }
 `;
+
 
 export const BottomSection = styled.div`
   background-color: var(--form-red);
@@ -74,9 +115,39 @@ export const BottomSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   p {
     font-family: poppins;
     font-size: 10px;
     font-weight: 200;
   }
-`;
+  @media (max-width:1200px) {
+    width: 100dvw;
+  }
+  `;
+
+export const MostVisited = styled.div`
+    color: black;
+    display: flex;
+    padding-left: 20px;
+    font-family: Poppins;
+  `
+
+export const Carousel = styled.div`
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    overflow-x: scroll;
+    @media (min-width:1200px) {
+      display: none;
+      height: 100%;
+    }
+  `;
+
+export const CarouselItem = styled.div`
+    height: 100%;
+    min-width: 300px;
+    border: 1px solid var(--form-blue);
+    background-color: white;
+    border-radius: 6px;
+  `

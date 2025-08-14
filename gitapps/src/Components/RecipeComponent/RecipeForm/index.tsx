@@ -34,8 +34,8 @@ function RecipeForm() {
 
   return (
     <>
+      <TopDecorativeBar />
       <Container>
-        <TopDecorativeBar>a</TopDecorativeBar>
         <TopFormNav>
           <p>Criar sua</p> <span> receita</span>
         </TopFormNav>

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "db": "npx json-server --watch db.json",
-    "host": "vite --host --port 5173",
+    "host": "vite --host --port 8975",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

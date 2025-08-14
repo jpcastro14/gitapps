@@ -30,7 +30,7 @@ export const SearchField = styled.div`
   label{
     font-family: Poppins;
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 500;
   }
   input{
     height: 30px;
@@ -68,19 +68,22 @@ export const VeganButton = styled.button<ButtonProps>`
   height: 50px;
   width: 50px;
   border-radius: 500px;
-  background-color:${(props) => props.$veganColor ? "var(--regular-green)" : "white"};
-  border: none;
+  background-color:white;
+  img{
+    height: 30px;
+    justify-self: center;
+    align-items: center;
+  }
+  border: ${(props) => props.$veganColor ? " 2px solid  var(--regular-green)" : "none"};
   filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.35));
-
   @media(max-width:1200px){
     align-self: start;
   }
-
 `;
 
 export const RecipeCardContainer = styled.div`
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 1fr 1fr 1fr ;
   @media (max-width: 1200px){
     grid-template-columns: 1fr;
   }
@@ -92,7 +95,7 @@ export const RecipeCard = styled.div<ButtonProps>`
   margin: 0 auto;
   margin-top: 50px;
   border-radius:6px;
-  border: ${(props) => props.$vegan ? " 2px solid  var(--regular-green)" : "none"};
+  max-width:550px ;
   
   filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.35));
   color: black;

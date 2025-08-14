@@ -1,38 +1,242 @@
 {
   "recipes": [
     {
-      "id": "6674",
+      "id": "6675",
       "data": {
-        "name": "aaaaaaaaaaaaaaaa",
+        "name": "Pão de Queijo Vegano",
+        "servings": "6",
+        "prepareTime": "30",
+        "dificulty": "2",
+        "ingredients": "2 xícaras de polvilho doce, 1 xícara de água, 1/2 xícara de óleo, 1/2 xícara de leite vegetal, sal a gosto",
+        "prepareSteps": "Misture todos os ingredientes, modele bolinhas e asse em forno pré-aquecido a 180°C por 25 minutos.",
+        "isVegan": true
+      }
+    },
+    {
+      "id": "6676",
+      "data": {
+        "name": "Bolo de Chocolate",
+        "servings": "8",
+        "prepareTime": "45",
+        "dificulty": "2",
+        "ingredients": "2 xícaras de farinha, 1 xícara de açúcar, 1/2 xícara de cacau, 1 xícara de leite, 3 ovos",
+        "prepareSteps": "Misture os ingredientes secos, adicione os líquidos, asse em forno a 180°C por 35 minutos.",
+        "isVegan": false
+      }
+    },
+    {
+      "id": "6677",
+      "data": {
+        "name": "Salada Caesar",
+        "servings": "2",
+        "prepareTime": "15",
+        "dificulty": "1",
+        "ingredients": "1 alface romana, 1/2 xícara de croutons, 2 colheres de molho Caesar, queijo parmesão ralado",
+        "prepareSteps": "Misture a alface com os croutons, regue com o molho e finalize com parmesão.",
+        "isVegan": false
+      }
+    },
+    {
+      "id": "6678",
+      "data": {
+        "name": "Risoto de Cogumelos",
         "servings": "4",
-        "prepareTime": "4",
-        "dificulty": "1",
-        "ingredients": "4aaaaaaaaaa",
-        "prepareSteps": "aaaaaaaaaaaaaaaa",
+        "prepareTime": "40",
+        "dificulty": "3",
+        "ingredients": "1 xícara de arroz arbóreo, 200g de cogumelos, 1 cebola, 1 litro de caldo de legumes, 1/2 xícara de vinho branco",
+        "prepareSteps": "Refogue a cebola, adicione os cogumelos, o arroz e o vinho. Cozinhe adicionando caldo aos poucos até o arroz ficar cremoso.",
         "isVegan": true
       }
     },
     {
-      "id": "9a1a",
+      "id": "6679",
       "data": {
-        "name": "Piruliro baby",
-        "servings": "1888",
-        "prepareTime": "888",
+        "name": "Panqueca de Banana",
+        "servings": "2",
+        "prepareTime": "20",
         "dificulty": "1",
-        "ingredients": "ooooooooooooooooo",
-        "prepareSteps": "ooooooooooooooooo",
+        "ingredients": "1 banana, 1 ovo, 2 colheres de aveia, 1 colher de mel",
+        "prepareSteps": "Amasse a banana, misture com o ovo e a aveia. Frite em frigideira e sirva com mel.",
+        "isVegan": false
+      }
+    },
+    {
+      "id": "6680",
+      "data": {
+        "name": "Sopa de Abóbora",
+        "servings": "4",
+        "prepareTime": "35",
+        "dificulty": "2",
+        "ingredients": "1 abóbora pequena, 1 cebola, 2 dentes de alho, 1 litro de caldo de legumes, azeite",
+        "prepareSteps": "Refogue a cebola e o alho, adicione a abóbora e o caldo. Cozinhe até ficar macio e bata no liquidificador.",
         "isVegan": true
       }
     },
     {
-      "id": "92fe",
+      "id": "6681",
       "data": {
-        "name": "Receita do Lucas Santos",
-        "servings": "18",
-        "prepareTime": "18",
-        "dificulty": "4",
-        "ingredients": "Lucas santos",
-        "prepareSteps": "Kamilynha",
+        "name": "Frango Assado",
+        "servings": "6",
+        "prepareTime": "60",
+        "dificulty": "2",
+        "ingredients": "1 frango inteiro, sal, pimenta, alecrim, 2 colheres de azeite",
+        "prepareSteps": "Tempere o frango, regue com azeite e asse em forno a 200°C por 50 minutos.",
+        "isVegan": false
+      }
+    },
+    {
+      "id": "6682",
+      "data": {
+        "name": "Tofu Grelhado",
+        "servings": "2",
+        "prepareTime": "20",
+        "dificulty": "1",
+        "ingredients": "200g de tofu, 2 colheres de molho shoyu, 1 colher de azeite, pimenta a gosto",
+        "prepareSteps": "Corte o tofu em fatias, tempere com shoyu e azeite, grelhe por 3 minutos de cada lado.",
+        "isVegan": true
+      }
+    },
+    {
+      "id": "6683",
+      "data": {
+        "name": "Lasanha de Berinjela",
+        "servings": "6",
+        "prepareTime": "50",
+        "dificulty": "3",
+        "ingredients": "2 berinjelas, 500g de molho de tomate, 200g de queijo muçarela, manjericão",
+        "prepareSteps": "Corte as berinjelas em fatias, monte camadas com molho e queijo, asse por 35 minutos.",
+        "isVegan": false
+      }
+    },
+    {
+      "id": "6684",
+      "data": {
+        "name": "Smoothie de Morango",
+        "servings": "1",
+        "prepareTime": "5",
+        "dificulty": "1",
+        "ingredients": "1 xícara de morangos, 1 banana, 1/2 xícara de leite vegetal, 1 colher de mel",
+        "prepareSteps": "Bata todos os ingredientes no liquidificador até ficar homogêneo.",
+        "isVegan": true
+      }
+    },
+    {
+      "id": "6685",
+      "data": {
+        "name": "Omelete de Espinafre",
+        "servings": "2",
+        "prepareTime": "15",
+        "dificulty": "2",
+        "ingredients": "3 ovos, 1 xícara de espinafre, sal, pimenta, 1 colher de azeite",
+        "prepareSteps": "Bata os ovos, misture com o espinafre, tempere e frite em frigideira.",
+        "isVegan": false
+      }
+    },
+    {
+      "id": "6686",
+      "data": {
+        "name": "Curry de Grão-de-Bico",
+        "servings": "4",
+        "prepareTime": "30",
+        "dificulty": "2",
+        "ingredients": "1 xícara de grão-de-bico cozido, 1 cebola, 2 dentes de alho, 1 colher de curry em pó, 1 lata de leite de coco",
+        "prepareSteps": "Refogue a cebola e o alho, adicione o curry, o grão-de-bico e o leite de coco. Cozinhe por 20 minutos.",
+        "isVegan": true
+      }
+    },
+    {
+      "id": "6687",
+      "data": {
+        "name": "Brigadeiro",
+        "servings": "10",
+        "prepareTime": "20",
+        "dificulty": "1",
+        "ingredients": "1 lata de leite condensado, 2 colheres de chocolate em pó, 1 colher de manteiga",
+        "prepareSteps": "Misture tudo em uma panela e mexa até desgrudar do fundo. Enrole em bolinhas.",
+        "isVegan": false
+      }
+    },
+    {
+      "id": "6688",
+      "data": {
+        "name": "Quiche de Legumes",
+        "servings": "6",
+        "prepareTime": "45",
+        "dificulty": "3",
+        "ingredients": "1 massa folhada, 2 ovos, 1 xícara de creme de leite, 1 xícara de legumes variados",
+        "prepareSteps": "Forre uma forma com a massa, adicione os legumes e a mistura de ovos e creme de leite. Asse por 35 minutos.",
+        "isVegan": false
+      }
+    },
+    {
+      "id": "6689",
+      "data": {
+        "name": "Strogonoff de Cogumelos",
+        "servings": "4",
+        "prepareTime": "25",
+        "dificulty": "2",
+        "ingredients": "300g de cogumelos, 1 cebola, 1 colher de mostarda, 1/2 xícara de creme de leite vegetal",
+        "prepareSteps": "Refogue a cebola e os cogumelos, adicione a mostarda e o creme de leite. Sirva com arroz.",
+        "isVegan": true
+      }
+    },
+    {
+      "id": "6690",
+      "data": {
+        "name": "Cuscuz Paulista",
+        "servings": "6",
+        "prepareTime": "40",
+        "dificulty": "2",
+        "ingredients": "2 xícaras de farinha de milho, 1 lata de ervilha, 2 ovos cozidos, 1 tomate, azeitonas",
+        "prepareSteps": "Cozinhe a farinha de milho com água, misture os outros ingredientes e modele em uma forma.",
+        "isVegan": false
+      }
+    },
+    {
+      "id": "6691",
+      "data": {
+        "name": "Pudim de Chia",
+        "servings": "2",
+        "prepareTime": "5",
+        "dificulty": "1",
+        "ingredients": "3 colheres de sementes de chia, 1 xícara de leite vegetal, 1 colher de mel",
+        "prepareSteps": "Misture tudo e deixe na geladeira por 4 horas.",
+        "isVegan": true
+      }
+    },
+    {
+      "id": "6692",
+      "data": {
+        "name": "Macarrão ao Pesto",
+        "servings": "4",
+        "prepareTime": "20",
+        "dificulty": "2",
+        "ingredients": "300g de macarrão, 1 xícara de manjericão, 2 colheres de castanhas, 1/2 xícara de azeite",
+        "prepareSteps": "Bata o manjericão com as castanhas e o azeite no liquidificador. Misture com o macarrão cozido.",
+        "isVegan": true
+      }
+    },
+    {
+      "id": "6693",
+      "data": {
+        "name": "Bolo de Cenoura",
+        "servings": "8",
+        "prepareTime": "50",
+        "dificulty": "2",
+        "ingredients": "3 cenouras, 3 ovos, 2 xícaras de farinha, 1 xícara de óleo, 1 xícara de açúcar",
+        "prepareSteps": "Bata as cenouras com os ovos e o óleo, misture com os ingredientes secos e asse por 35 minutos.",
+        "isVegan": false
+      }
+    },
+    {
+      "id": "6694",
+      "data": {
+        "name": "Salada de Quinoa",
+        "servings": "4",
+        "prepareTime": "15",
+        "dificulty": "1",
+        "ingredients": "1 xícara de quinoa cozida, 1 pepino, 1 tomate, azeite, limão, sal",
+        "prepareSteps": "Misture a quinoa com os legumes e tempere com azeite, limão e sal.",
         "isVegan": true
       }
     }

@@ -2,17 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100dvw;
+  height: 100dvh;
   background-color: #f3f3f3;
   display: grid;
-  grid-template-rows: 20% 70% 10%;
-  grid-template-columns: 100%;
-  min-width: 430px;
+  min-width: 428px;
+  grid-template-rows: 20% auto 10%;
   @media (max-width:1200px) {
     display: grid;
-    width: 100%;
-    justify-content: center;
-    grid-template-rows:10% 50% 1% 30% auto;
-    gap: 10px;
+    grid-template-columns:100%;
+    grid-template-rows:8% 50% 2% 32% auto;
   }
 `;
 
@@ -81,6 +79,7 @@ export const MidSection = styled.div`
   }
   input {
     width: 80%;
+    max-width: 800px;
     background-color: aliceblue;
     border-radius: 50px;
     border: none;
@@ -97,9 +96,6 @@ export const MidSection = styled.div`
     p{
       font-size: 35px;
       font-weight: 300;
-    }
-    span{
-      color: black;
     }
     input{
       width: 100%;
@@ -131,6 +127,9 @@ export const MostVisited = styled.div`
     display: flex;
     padding-left: 20px;
     font-family: Poppins;
+    @media (min-width:1200px) {
+      display: none;
+    }
   `
 
 export const Carousel = styled.div`

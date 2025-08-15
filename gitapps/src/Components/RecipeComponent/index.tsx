@@ -21,6 +21,7 @@ function RecipeApp() {
         </p>
         <button onClick={() => navigate("/recipeform")}>Criar Receita</button>
       </TopNav>
+
       <MidSection>
         <p>Encontrar receitas</p>
         <input type="text" />
@@ -29,15 +30,18 @@ function RecipeApp() {
           agilizar a semana com pratos práticos e econômicos.
         </span>
       </MidSection>
+
       <MostVisited>
         <span>Mais vistas</span>
       </MostVisited>
+
       <Carousel>
         <CarouselItem>a</CarouselItem>
         <CarouselItem>b</CarouselItem>
         <CarouselItem>c</CarouselItem>
         <CarouselItem>d</CarouselItem>
       </Carousel>
+
       <BottomSection>
         <p>Desenvolvido por João Castro</p>
       </BottomSection>

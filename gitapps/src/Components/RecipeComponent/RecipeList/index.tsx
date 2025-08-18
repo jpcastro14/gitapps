@@ -17,11 +17,13 @@ import clock from "../../../assets/clock.svg";
 import person from "../../../assets/person.svg";
 import { IRecipe } from "../types";
 import leaf from "../../../assets/leaf.svg";
+import { useNavigate } from "react-router-dom";
 
 function Recipelist() {
   const [recipes, setRecipes] = useState<IRecipe[]>();
   const [filteredRecipes, setFilteredRecipes] = useState<IRecipe[]>();
   const [vegancolor, setVeganColor] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -95,7 +97,9 @@ function Recipelist() {
                 </RecipeCard>
               ))
             : recipes?.map((recipe) => (
-                <RecipeCard>
+                <RecipeCard
+                  onClick={() => navigate(`/recipeunit/${recipe.id}`)}
+                >
                   <RecipeImage />
                   <RecipeName>{recipe.data.name}</RecipeName>
                   <RecipePropsDiv>

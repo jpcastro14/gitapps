@@ -25,7 +25,7 @@ function App() {
               <Route path="/recipe" element={<RecipeApp />} />
               <Route path="/recipeform" element={<RecipeForm />} />
               <Route path="/recipelist" element={<RecipeList />} />
-              <Route path="/recipeunit" element={<RecipeUnit />} />
+              <Route path="/recipeunit/:id" element={<RecipeUnit />} />
             </Routes>
           </BrowserRouter>
         </UserProvider>

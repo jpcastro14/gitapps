@@ -77,7 +77,9 @@ function Recipelist() {
         <RecipeCardContainer>
           {filteredRecipes
             ? filteredRecipes?.map((recipe) => (
-                <RecipeCard $vegan={recipe.data.isVegan}>
+                <RecipeCard
+                  onClick={() => navigate(`/recipeunit/${recipe.id}`)}
+                >
                   <RecipeImage />
                   <RecipeName>{recipe.data.name}</RecipeName>
                   <RecipePropsDiv>

@@ -1,9 +1,15 @@
 import axios from "axios";
 import { TopDecorativeBar } from "../RecipeForm/styles";
 import { IRecipe } from "../types";
-import { Container, IngredientsContainer } from "./styles";
+import {
+  Container,
+  Divider,
+  IngredientsContainer,
+  PrepareStepsContainer,
+} from "./styles";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { FormLabel, Rating } from "@mui/material";
 
 function RecipeUnit() {
   const { id } = useParams();
@@ -17,17 +23,27 @@ function RecipeUnit() {
         .catch(({ error }) => console.log(error));
     };
     fetchdata();
-  });
+  }, []);
 
   const list = recipe?.data.ingredients.split(/[,][ ]/).join("\n");
+
+  console.log(list);
+
   return (
     <>
       <TopDecorativeBar />
       <Container>
-        <h1>{recipe?.data.name}</h1>
         <IngredientsContainer>
+          <h1>{recipe?.data.name}</h1>
+          <h2>Ingredientes:</h2>
           <p>{list}</p>
         </IngredientsContainer>
+        <Divider />
+        <PrepareStepsContainer>
+          <h2>Como preparar:</h2>
+          <p>{recipe?.data.prepareSteps}</p>
+        </PrepareStepsContainer>
+        <Rating name="size-large" size="large" defaultValue={3} />
       </Container>
     </>
   );

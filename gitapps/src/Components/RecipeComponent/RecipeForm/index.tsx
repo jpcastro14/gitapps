@@ -80,7 +80,7 @@ function RecipeForm() {
               min={0}
               max={5}
               step={1}
-              valueLabelDisplay="on"
+              valueLabelDisplay="auto"
               {...register("data.dificulty")}
             />
           </Grid2>

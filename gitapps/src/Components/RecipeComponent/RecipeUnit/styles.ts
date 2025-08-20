@@ -19,6 +19,34 @@ export const Container = styled.div`
 
 `;
 
+export const TopDecorativeBarEdit = styled.div`
+    height: 100px;
+    background-color: var(--form-red);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right:20px;
+  @media (max-width:1200px) {
+    width: 100%;
+    margin: 0;
+  }
+`;
+
+export const ModalForm = styled.div`
+border-radius: 8px;
+    width: 80rem;
+    background-color: white;
+    margin: 5rem auto;
+    padding: 2rem;
+    color: var(--form-black);
+    h2{
+        font-weight: unset;
+        font-weight: 500;
+        font-size: 2rem;
+        margin-top: 0;
+    }
+`;
+
 export const IngredientsContainer = styled.div`
     display: flex;
     flex-direction: column;

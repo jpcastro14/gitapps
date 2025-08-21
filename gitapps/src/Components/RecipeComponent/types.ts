@@ -1,17 +1,13 @@
 export interface IRecipe {
     id: number;
-    data: {
-        name: string;
-        description: string;
-        dificulty: number;
-        isVegan: boolean;
-        ingredients: string;
-        servings: number;
-        prepareTime: number;
-        prepareSteps: string;
-    }
-
-
+    name: string;
+    description: string;
+    dificulty: number;
+    isVegan: boolean;
+    ingredients: string;
+    servings: number;
+    prepareTime: number;
+    prepareSteps: string;
 
 }
 

@@ -46,7 +46,7 @@ function RecipeForm() {
               fullWidth
               variant="outlined"
               size="small"
-              {...register("data.name", { required: true })}
+              {...register("name", { required: true })}
             />
           </Grid2>
           {/* ------------------------------ */}
@@ -57,7 +57,7 @@ function RecipeForm() {
               fullWidth
               size="small"
               type="number"
-              {...register("data.servings", { required: false })}
+              {...register("servings", { required: false })}
             />
           </Grid2>
           {/* ------------------------------ */}
@@ -69,7 +69,7 @@ function RecipeForm() {
               fullWidth
               variant="outlined"
               size="small"
-              {...register("data.prepareTime", { required: true })}
+              {...register("prepareTime", { required: true })}
             />
           </Grid2>
 
@@ -81,7 +81,7 @@ function RecipeForm() {
               max={5}
               step={1}
               valueLabelDisplay="auto"
-              {...register("data.dificulty")}
+              {...register("dificulty")}
             />
           </Grid2>
 
@@ -94,7 +94,7 @@ function RecipeForm() {
               minRows={2}
               maxRows={4}
               size="medium"
-              {...register("data.ingredients")}
+              {...register("ingredients")}
             />
           </Grid2>
 
@@ -107,14 +107,14 @@ function RecipeForm() {
               minRows={2}
               maxRows={4}
               size="medium"
-              {...register("data.prepareSteps")}
+              {...register("prepareSteps")}
             />
           </Grid2>
           <Grid2 size={{ sm: 1, md: 4, lg: 4 }} alignSelf={"center"}>
             <FormLabel>Receita vegana</FormLabel>
             <Checkbox
               size="small"
-              {...register("data.isVegan", { required: false })}
+              {...register("isVegan", { required: false })}
             />
           </Grid2>
 

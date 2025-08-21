@@ -39,7 +39,7 @@ function Recipelist() {
     //let parameter = event.target.value;
 
     setFilteredRecipes(
-      recipes?.filter((item) => item.data.name.startsWith(event.target.value))
+      recipes?.filter((item) => item.name.startsWith(event.target.value))
     );
 
     console.log(filteredRecipes);
@@ -47,7 +47,7 @@ function Recipelist() {
 
   function veganFIlter(): void {
     setVeganColor(!vegancolor);
-    setFilteredRecipes(recipes?.filter((item) => item.data.isVegan == true));
+    setFilteredRecipes(recipes?.filter((item) => item.isVegan == true));
   }
 
   function noVegan(): void {
@@ -81,18 +81,15 @@ function Recipelist() {
                   onClick={() => navigate(`/recipeunit/${recipe.id}`)}
                 >
                   <RecipeImage />
-                  <RecipeName>{recipe.data.name}</RecipeName>
+                  <RecipeName>{recipe.name}</RecipeName>
                   <RecipePropsDiv>
                     <RecipeProps>
                       <img src={person} />
-                      <span>Serve até {recipe.data.servings} pessoas</span>
+                      <span>Serve até {recipe.servings} pessoas</span>
                     </RecipeProps>
                     <RecipeProps>
                       <img src={clock} />
-                      <span>
-                        {" "}
-                        Fica pronto em {recipe.data.prepareTime} minutos
-                      </span>
+                      <span> Fica pronto em {recipe.prepareTime} minutos</span>
                     </RecipeProps>
                   </RecipePropsDiv>
                   <RecipeCode>{recipe.id}</RecipeCode>
@@ -103,18 +100,15 @@ function Recipelist() {
                   onClick={() => navigate(`/recipeunit/${recipe.id}`)}
                 >
                   <RecipeImage />
-                  <RecipeName>{recipe.data.name}</RecipeName>
+                  <RecipeName>{recipe.name}</RecipeName>
                   <RecipePropsDiv>
                     <RecipeProps>
                       <img src={person} />
-                      <span>Serve até {recipe.data.servings} pessoas</span>
+                      <span>Serve até {recipe.servings} pessoas</span>
                     </RecipeProps>
                     <RecipeProps>
                       <img src={clock} />
-                      <span>
-                        {" "}
-                        Fica pronto em {recipe.data.prepareTime} minutos
-                      </span>
+                      <span> Fica pronto em {recipe.prepareTime} minutos</span>
                     </RecipeProps>
                   </RecipePropsDiv>
                   <RecipeCode>{recipe.id}</RecipeCode>

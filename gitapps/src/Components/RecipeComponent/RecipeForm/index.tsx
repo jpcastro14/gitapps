@@ -15,9 +15,9 @@ import { useNavigate } from "react-router-dom";
 
 function RecipeForm() {
   const navigate = useNavigate();
-  const [newRecipe, setNewRecipe] = useState<IRecipe>({} as IRecipe);
+  const [newRecipe, setNewRecipe] = useState<IRecipe>();
 
-  const { register, handleSubmit } = useForm<IRecipe>();
+  const { register, handleSubmit } = useForm<IRecipe>({mode:});
 
   const logRecipe = (data: IRecipe) => {
     axios
@@ -76,7 +76,6 @@ function RecipeForm() {
           <Grid2 size={{ xs: 1, md: 1 }} container>
             <FormLabel>Dificuldade</FormLabel>
             <Slider
-              type="number"
               min={0}
               max={5}
               step={1}

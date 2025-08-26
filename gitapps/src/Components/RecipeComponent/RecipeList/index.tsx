@@ -15,7 +15,7 @@ import { TopDecorativeBar } from "../RecipeForm/styles";
 import axios from "axios";
 import clock from "../../../assets/clock.svg";
 import person from "../../../assets/person.svg";
-import { IRecipe } from "../types";
+import { IRecipe } from "../types/types";
 import leaf from "../../../assets/leaf.svg";
 import { useNavigate } from "react-router-dom";
 

@@ -3,14 +3,31 @@ import {
   Carousel,
   CarouselItem,
   Container,
+  ErrorMessage,
   MidSection,
   MostVisited,
   TopNav,
 } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { Button, TextField } from "@mui/material";
+import { schema, Schema } from "./types/schemas";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 function RecipeApp() {
   const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Schema>({
+    mode: "onSubmit",
+    resolver: zodResolver(schema),
+  });
+
+  function logtest(d: Schema) {
+    console.log(d);
+  }
 
   return (
     <Container>
@@ -19,12 +36,24 @@ function RecipeApp() {
           {" "}
           Livrinho de <span>receitas</span>
         </p>
-        <button onClick={() => navigate("/recipeform")}>Criar Receita</button>
+        <div>
+          <button onClick={() => navigate("/recipeform")}>Criar Receita</button>
+          <button onClick={() => navigate("/recipelist")}>
+            Explorar Receitas
+          </button>
+        </div>
       </TopNav>
 
       <MidSection>
         <p>Encontrar receitas</p>
-        <input type="text" />
+        <div>
+          <input {...register("recipe")} />
+          <button onClick={() => handleSubmit(logtest)()}>Pesquisar</button>
+        </div>
+        {errors.recipe?.message && (
+          <ErrorMessage>{errors.recipe.message}</ErrorMessage>
+        )}
+
         <span>
           Centenas de receitas, seja para convidar os amigos para um jantar, ou
           agilizar a semana com pratos práticos e econômicos.

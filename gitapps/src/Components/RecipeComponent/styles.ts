@@ -23,6 +23,10 @@ export const TopNav = styled.div`
   align-items: stretch;
   padding: 50px 80px 0 80px;
   justify-content: space-between;
+  div{
+    display: flex;
+    gap: 2rem;
+  }
   p {
     margin: 0;
     padding: 0;
@@ -39,6 +43,9 @@ export const TopNav = styled.div`
     font-family: Poppins;
     color: var(--form-black);
     background-color: var(--form-yellow);
+    &:last-child{
+      background-color: var(--regular-red);
+    }
   }
   @media (max-width:1200px) {
     display:grid;
@@ -68,16 +75,41 @@ export const MidSection = styled.div`
   margin-top: 150px;
   font-family: poppins;
   align-items: center;
+  div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    button{
+      border-radius: 0 50px 50px 0;
+      border: none;
+      font-family:Poppins;
+      background-color: var(--regular-red);
+      &:hover{
+        background-color: var(--lighter-red);
+      }
+    }
+    input{
+      border-radius: 50px 0 0 50px;
+      min-height: 3rem;
+      background-color: aliceblue;
+      border: 1px solid var(--form-black);
+      width: 100%;
+      max-width: 1024px;
+      color: var(--form-black);
+      font-size: larger;
+      padding: 0 0 0  2rem ;
+    }
+  }
+
   p {
     color: var(--form-black);
     font-size: 25px;
   }
   span {
-    width: 400px;
-    margin-top: 20px;
+    margin-top: 2rem;
     color: var(--form-red);
   }
-  input {
+/*   input {
     width: 80%;
     max-width: 800px;
     background-color: aliceblue;
@@ -89,17 +121,12 @@ export const MidSection = styled.div`
     -moz-box-shadow: 0px 10px 19px -7px rgba(0, 0, 0, 0.75);
     color: var(--form-black);
     padding: 0 20px 0 20px;
-  }
+  } */
   @media (max-width:1200px) {
     padding: 40px;
     margin-top: 70px;
-    p{
-      font-size: 35px;
-      font-weight: 300;
-    }
     input{
       width: 100%;
-      
     }
   }
 `;
@@ -150,3 +177,12 @@ export const CarouselItem = styled.div`
     background-color: white;
     border-radius: 6px;
   `
+
+export const ErrorMessage = styled.span`
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  color: var(--regular-red);
+  background-color: var(--form-yellow);
+  padding: 1rem;
+`;

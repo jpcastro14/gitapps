@@ -9,7 +9,7 @@ import {
 import { Container, TopDecorativeBar, TopFormNav } from "./styles";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { IRecipe } from "../types";
+import { IRecipe } from "../types/types";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -17,9 +17,9 @@ function RecipeForm() {
   const navigate = useNavigate();
   const [newRecipe, setNewRecipe] = useState<IRecipe>();
 
-  const { register, handleSubmit } = useForm<IRecipe>({mode:});
+  const { register, handleSubmit } = useForm<IRecipe>();
 
-  const logRecipe = (data: IRecipe) => {
+  function logRecipe(data: IRecipe) {
     axios
       .post("http://localhost:3000/recipes/", {
         data,
@@ -30,7 +30,7 @@ function RecipeForm() {
           : alert("Ocorreu um erro durante a solicitação");
       })
       .catch((error) => alert(error));
-  };
+  }
 
   return (
     <>
@@ -75,11 +75,10 @@ function RecipeForm() {
 
           <Grid2 size={{ xs: 1, md: 1 }} container>
             <FormLabel>Dificuldade</FormLabel>
-            <Slider
-              min={0}
-              max={5}
-              step={1}
-              valueLabelDisplay="auto"
+            <TextField
+              type="number"
+              size="small"
+              fullWidth
               {...register("dificulty")}
             />
           </Grid2>

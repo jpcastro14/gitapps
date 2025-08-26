@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IRecipe } from "../types";
+import { IRecipe } from "../types/types";
 import {
   Container,
   Divider,

@@ -10,16 +10,26 @@ import { Container, TopDecorativeBar, TopFormNav } from "./styles";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { IRecipe } from "../types/types";
+import { recipeSchema, RecipeSchema } from "../types/schemas";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { minLength } from "zod";
 
 function RecipeForm() {
   const navigate = useNavigate();
   const [newRecipe, setNewRecipe] = useState<IRecipe>();
 
-  const { register, handleSubmit } = useForm<IRecipe>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RecipeSchema>({
+    mode: "all",
+    resolver: zodResolver(recipeSchema),
+  });
 
-  function logRecipe(data: IRecipe) {
+  function logRecipe(data: RecipeSchema) {
     axios
       .post("http://localhost:3000/recipes/", {
         data,
@@ -46,6 +56,8 @@ function RecipeForm() {
               fullWidth
               variant="outlined"
               size="small"
+              error={!!errors.name}
+              helperText={errors.name?.message}
               {...register("name", { required: true })}
             />
           </Grid2>
@@ -55,8 +67,8 @@ function RecipeForm() {
             <FormLabel>Serve quantas pessoas</FormLabel>
             <TextField
               fullWidth
-              size="small"
               type="number"
+              size="small"
               {...register("servings", { required: false })}
             />
           </Grid2>

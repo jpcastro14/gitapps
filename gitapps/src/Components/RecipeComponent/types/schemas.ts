@@ -9,13 +9,19 @@ export type Schema = z.infer<typeof schema>
 
 export const recipeSchema = z.object({
     name: z.string().min(10, { error: "Digite o nome da receita, no mínimo 10 caracteres" }),
-    description: z.string().min(1, { error: "Descreva o procedimento de preparo" }),
-    dificulty: z.number().max(1, { error: "Informe o nível de dificuldade da receita" }),
+    dificulty: z.string().min(1, { error: "Informe o grau de dificuldade 1 - 5 " }).refine((value) => !Number.isNaN(parseInt(value, 10))),
     isVegan: z.boolean(),
-    ingredients: z.string().min(1, { error: "Informe pelo menos um ingrediente" }),
-    servings: z.number().min(1, { error: "Informe quantas pessoas a receita serve" }),
-    prepareTime: z.number().nonnegative(),
+    ingredients: z.string().min(10, { error: "Informe pelo menos um ingrediente" }),
+    servings: z.string().min(1, { error: "Informe quantas porções a receita rende" }).refine((value) => !Number.isNaN(parseInt(value, 10))),
+    prepareTime: z.string().min(1, { error: "Informe o tempo de preparo em minutos" }).refine((value) => !Number.isNaN(parseInt(value, 10))),
     prepareSteps: z.string().min(1, { error: "Descreva o processo de preparo da receita" })
 })
 
 export type RecipeSchema = z.infer<typeof recipeSchema>
+
+export const alertSchema = z.object({
+    type: z.string(),
+    message: z.string()
+})
+
+export type AlertSchema = z.infer<typeof recipeSchema>

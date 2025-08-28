@@ -18,6 +18,7 @@ import person from "../../../assets/person.svg";
 import { IRecipe } from "../types/types";
 import leaf from "../../../assets/leaf.svg";
 import { useNavigate } from "react-router-dom";
+import { Stack } from "@mui/material";
 
 function Recipelist() {
   const [recipes, setRecipes] = useState<IRecipe[]>();
@@ -39,7 +40,7 @@ function Recipelist() {
     //let parameter = event.target.value;
 
     setFilteredRecipes(
-      recipes?.filter((item) => item.name.startsWith(event.target.value))
+      recipes?.filter((item) => item.data.name.startsWith(event.target.value))
     );
 
     console.log(filteredRecipes);
@@ -47,7 +48,7 @@ function Recipelist() {
 
   function veganFIlter(): void {
     setVeganColor(!vegancolor);
-    setFilteredRecipes(recipes?.filter((item) => item.isVegan == true));
+    setFilteredRecipes(recipes?.filter((item) => item.data.isVegan == true));
   }
 
   function noVegan(): void {
@@ -81,15 +82,18 @@ function Recipelist() {
                   onClick={() => navigate(`/recipeunit/${recipe.id}`)}
                 >
                   <RecipeImage />
-                  <RecipeName>{recipe.name}</RecipeName>
+                  <RecipeName>{recipe.data.name}</RecipeName>
                   <RecipePropsDiv>
                     <RecipeProps>
                       <img src={person} />
-                      <span>Serve até {recipe.servings} pessoas</span>
+                      <span>Serve até {recipe.data.servings} pessoas</span>
                     </RecipeProps>
                     <RecipeProps>
                       <img src={clock} />
-                      <span> Fica pronto em {recipe.prepareTime} minutos</span>
+                      <span>
+                        {" "}
+                        Fica pronto em {recipe.data.prepareTime} minutos
+                      </span>
                     </RecipeProps>
                   </RecipePropsDiv>
                   <RecipeCode>{recipe.id}</RecipeCode>
@@ -100,15 +104,18 @@ function Recipelist() {
                   onClick={() => navigate(`/recipeunit/${recipe.id}`)}
                 >
                   <RecipeImage />
-                  <RecipeName>{recipe.name}</RecipeName>
+                  <RecipeName>{recipe.data.name}</RecipeName>
                   <RecipePropsDiv>
                     <RecipeProps>
                       <img src={person} />
-                      <span>Serve até {recipe.servings} pessoas</span>
+                      <span>Serve até {recipe.data.servings} pessoas</span>
                     </RecipeProps>
                     <RecipeProps>
                       <img src={clock} />
-                      <span> Fica pronto em {recipe.prepareTime} minutos</span>
+                      <span>
+                        {" "}
+                        Fica pronto em {recipe.data.prepareTime} minutos
+                      </span>
                     </RecipeProps>
                   </RecipePropsDiv>
                   <RecipeCode>{recipe.id}</RecipeCode>

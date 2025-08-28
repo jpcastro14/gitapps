@@ -28,7 +28,6 @@ function RecipeUnit() {
   const [recipe, setRecipe] = useState<IRecipe>();
   const [newRecipe, setNewRecipe] = useState<IRecipe>();
   const [ismodalOpen, setIsmodalOpen] = useState<boolean>(false);
-
   const { register, handleSubmit } = useForm<IRecipe>();
 
   useEffect(() => {
@@ -41,7 +40,7 @@ function RecipeUnit() {
     fetchdata();
   }, []);
 
-  const list = recipe?.ingredients.split(/[,][ ]/).join("\n");
+  const list = recipe?.data.ingredients.split(/[,][ ]/).join("\n");
 
   function handleClose(): void {
     setIsmodalOpen(!ismodalOpen);
@@ -70,8 +69,8 @@ function RecipeUnit() {
                 fullWidth
                 variant="outlined"
                 size="small"
-                placeholder={recipe?.name}
-                {...register("name", { required: true })}
+                placeholder={recipe?.data.name}
+                {...register("data.name", { required: true })}
               />
             </Grid2>
             {/* ------------------------------ */}
@@ -82,8 +81,8 @@ function RecipeUnit() {
                 fullWidth
                 size="small"
                 type="number"
-                placeholder={recipe?.servings.toString()}
-                {...register("servings", { required: false })}
+                placeholder={recipe?.data.servings.toString()}
+                {...register("data.servings", { required: false })}
               />
             </Grid2>
             {/* ------------------------------ */}
@@ -95,21 +94,19 @@ function RecipeUnit() {
                 fullWidth
                 variant="outlined"
                 size="small"
-                placeholder={recipe?.prepareTime.toString()}
-                {...register("prepareTime", { required: true })}
+                placeholder={recipe?.data.prepareTime.toString()}
+                {...register("data.prepareTime", { required: true })}
               />
             </Grid2>
 
-            <Grid2 size={{ xs: 1, md: 1 }} container>
+            <Grid2 size={{ xs: 1, md: 1, lg: 1 }} container>
               <FormLabel>Dificuldade</FormLabel>
-              <Slider
+              <TextField
                 type="number"
-                min={0}
-                max={5}
-                step={1}
-                valueLabelDisplay="auto"
-                value={recipe?.dificulty.toString()}
-                {...register("dificulty")}
+                size="small"
+                fullWidth
+                value={recipe?.data.dificulty.toString()}
+                {...register("data.dificulty")}
               />
             </Grid2>
 
@@ -122,8 +119,8 @@ function RecipeUnit() {
                 minRows={2}
                 maxRows={4}
                 size="medium"
-                placeholder={recipe?.ingredients}
-                {...register("ingredients")}
+                placeholder={recipe?.data.ingredients}
+                {...register("data.ingredients")}
               />
             </Grid2>
 
@@ -136,16 +133,16 @@ function RecipeUnit() {
                 minRows={2}
                 maxRows={4}
                 size="medium"
-                placeholder={recipe?.prepareSteps}
-                {...register("prepareSteps")}
+                placeholder={recipe?.data.prepareSteps}
+                {...register("data.prepareSteps")}
               />
             </Grid2>
             <Grid2 size={{ sm: 1, md: 4, lg: 4 }} alignSelf={"center"}>
               <FormLabel>Receita vegana</FormLabel>
               <Checkbox
                 size="small"
-                value={recipe?.isVegan}
-                {...register("isVegan", { required: false })}
+                value={recipe?.data.isVegan}
+                {...register("data.isVegan", { required: false })}
               />
             </Grid2>
 
@@ -187,14 +184,14 @@ function RecipeUnit() {
       </TopDecorativeBarEdit>
       <Container>
         <IngredientsContainer>
-          <h1>{recipe?.name}</h1>
+          <h1>{recipe?.data.name}</h1>
           <h2>Ingredientes:</h2>
           <p>{list}</p>
         </IngredientsContainer>
         <Divider />
         <PrepareStepsContainer>
           <h2>Como preparar:</h2>
-          <p>{recipe?.prepareSteps}</p>
+          <p>{recipe?.data.prepareSteps}</p>
         </PrepareStepsContainer>
       </Container>
       {/* ---------------------------------- Display da receita ---------------------------------- */}

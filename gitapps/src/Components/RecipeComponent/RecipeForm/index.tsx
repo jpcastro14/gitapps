@@ -1,45 +1,40 @@
-import {
-  Button,
-  Checkbox,
-  FormLabel,
-  Grid2,
-  Slider,
-  TextField,
-} from "@mui/material";
+import { Button, Checkbox, FormLabel, Grid2, TextField } from "@mui/material";
 import { Container, TopDecorativeBar, TopFormNav } from "./styles";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { IRecipe } from "../types/types";
 import { recipeSchema, RecipeSchema } from "../types/schemas";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { minLength } from "zod";
+import { useState } from "react";
 
 function RecipeForm() {
   const navigate = useNavigate();
-  const [newRecipe, setNewRecipe] = useState<IRecipe>();
-
+  const [recipe, setRecipe] = useState<RecipeSchema>();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<RecipeSchema>({
-    mode: "all",
+    mode: "onSubmit",
     resolver: zodResolver(recipeSchema),
   });
 
   function logRecipe(data: RecipeSchema) {
-    axios
-      .post("http://localhost:3000/recipes/", {
-        data,
-      })
-      .then((response) => {
-        response.status == 201
-          ? navigate("/recipelist")
-          : alert("Ocorreu um erro durante a solicitação");
-      })
-      .catch((error) => alert(error));
+    try {
+      setRecipe(data);
+      axios
+        .post("http://localhost:3000/recipes/", {
+          data,
+        })
+        .then((response) => {
+          response.status == 201
+            ? navigate("/recipelist")
+            : alert("Ocorreu um erro durante a solicitação");
+        })
+        .catch((error) => alert(error));
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -49,7 +44,7 @@ function RecipeForm() {
         <TopFormNav>
           <p>Criar sua</p> <span> receita</span>
         </TopFormNav>
-        <Grid2 container spacing={1} columns={{ xs: 1, sm: 1, md: 4 }}>
+        <Grid2 container spacing={1} columns={{ xs: 1, sm: 1, md: 3 }}>
           <Grid2 size={{ xs: 1, sm: 1, md: 4 }} container>
             <FormLabel>Nome da receita</FormLabel>
             <TextField
@@ -58,18 +53,21 @@ function RecipeForm() {
               size="small"
               error={!!errors.name}
               helperText={errors.name?.message}
-              {...register("name", { required: true })}
+              {...register("name")}
             />
           </Grid2>
           {/* ------------------------------ */}
 
-          <Grid2 size={{ xs: 1, sm: 1, md: 2 }} container>
+          <Grid2 size={{ xs: 1, sm: 1, md: 1 }} container>
             <FormLabel>Serve quantas pessoas</FormLabel>
             <TextField
-              fullWidth
               type="number"
+              slotProps={{ htmlInput: { type: "number", min: 0, max: 5 } }}
+              fullWidth
               size="small"
-              {...register("servings", { required: false })}
+              error={!!errors.servings}
+              placeholder={errors.servings?.message}
+              {...register("servings")}
             />
           </Grid2>
           {/* ------------------------------ */}
@@ -78,19 +76,25 @@ function RecipeForm() {
             <FormLabel>Tempo de preparo</FormLabel>
             <TextField
               type="number"
+              slotProps={{ htmlInput: { type: "number", min: 0, max: 120 } }}
               fullWidth
               variant="outlined"
               size="small"
-              {...register("prepareTime", { required: true })}
+              error={!!errors.prepareTime}
+              placeholder={errors.prepareTime?.message}
+              {...register("prepareTime")}
             />
           </Grid2>
 
           <Grid2 size={{ xs: 1, md: 1 }} container>
             <FormLabel>Dificuldade</FormLabel>
             <TextField
+              slotProps={{ htmlInput: { type: "number", min: 0, max: 5 } }}
               type="number"
               size="small"
               fullWidth
+              error={!!errors.dificulty}
+              placeholder={errors.dificulty?.message}
               {...register("dificulty")}
             />
           </Grid2>
@@ -104,6 +108,8 @@ function RecipeForm() {
               minRows={2}
               maxRows={4}
               size="medium"
+              error={!!errors.ingredients}
+              helperText={errors.ingredients?.message}
               {...register("ingredients")}
             />
           </Grid2>
@@ -117,15 +123,14 @@ function RecipeForm() {
               minRows={2}
               maxRows={4}
               size="medium"
+              error={!!errors.prepareSteps}
+              helperText={errors.prepareSteps?.message}
               {...register("prepareSteps")}
             />
           </Grid2>
           <Grid2 size={{ sm: 1, md: 4, lg: 4 }} alignSelf={"center"}>
             <FormLabel>Receita vegana</FormLabel>
-            <Checkbox
-              size="small"
-              {...register("isVegan", { required: false })}
-            />
+            <Checkbox size="small" {...register("isVegan")} />
           </Grid2>
 
           <Grid2 size={4} container>

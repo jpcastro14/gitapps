@@ -45,7 +45,7 @@ function RecipeForm() {
   return (
     <>
       <TopDecorativeBar />
-      <AlertComponent message="Receita criada com sucesso!" open={true} />
+      <AlertComponent children="Receita criada com sucesso!" open={true} />
       <Container>
         <TopFormNav>
           <p>Criar sua</p> <span> receita</span>

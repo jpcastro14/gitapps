@@ -11,7 +11,7 @@ export const recipeSchema = z.object({
     name: z.string().min(10, { error: "Digite o nome da receita, no mínimo 10 caracteres" }),
     dificulty: z.string().min(1, { error: "Informe o grau de dificuldade 1 - 5 " }).refine((value) => !Number.isNaN(parseInt(value, 10))),
     isVegan: z.boolean(),
-    ingredients: z.string().min(10, { error: "Informe pelo menos um ingrediente" }),
+    ingredients: z.string().min(10, { error: "Informe pelo menos um ingrediente - minimo 10 caracteres" }),
     servings: z.string().min(1, { error: "Informe quantas porções a receita rende" }).refine((value) => !Number.isNaN(parseInt(value, 10))),
     prepareTime: z.string().min(1, { error: "Informe o tempo de preparo em minutos" }).refine((value) => !Number.isNaN(parseInt(value, 10))),
     prepareSteps: z.string().min(1, { error: "Descreva o processo de preparo da receita" })

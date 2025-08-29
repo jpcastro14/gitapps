@@ -18,7 +18,6 @@ import person from "../../../assets/person.svg";
 import { IRecipe } from "../types/types";
 import leaf from "../../../assets/leaf.svg";
 import { useNavigate } from "react-router-dom";
-import { Stack } from "@mui/material";
 
 function Recipelist() {
   const [recipes, setRecipes] = useState<IRecipe[]>();

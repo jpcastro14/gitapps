@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import AlertComponent from "../../AlertComponent";
 
 function RecipeForm() {
   const navigate = useNavigate();
@@ -27,9 +28,13 @@ function RecipeForm() {
           data,
         })
         .then((response) => {
-          response.status == 201
-            ? navigate("/recipelist")
-            : alert("Ocorreu um erro durante a solicitação");
+          if (response.status === 201) {
+            alert("Receita criada com sucesso redirecionando");
+
+            setTimeout(() => {
+              navigate("/recipelist");
+            }, 3000);
+          }
         })
         .catch((error) => alert(error));
     } catch (error) {
@@ -40,6 +45,7 @@ function RecipeForm() {
   return (
     <>
       <TopDecorativeBar />
+      <AlertComponent message="Receita criada com sucesso!" open={true} />
       <Container>
         <TopFormNav>
           <p>Criar sua</p> <span> receita</span>

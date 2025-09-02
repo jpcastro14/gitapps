@@ -27,7 +27,6 @@ export const TopDecorativeBarEdit = styled.div`
     align-items: center;
     padding-right:20px;
   @media (max-width:1200px) {
-    width: 100%;
     margin: 0;
   }
 `;

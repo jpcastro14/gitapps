@@ -17,7 +17,7 @@ export const UserProvider = ({ children }: UserProviderProps) => {
   const userman: IUserContext = {
     name: "João",
     surname: "Castro",
-    project: "KP software - Carreira Policial",
+    project: "OG Software - RecipeBook",
   };
 
   const [user, setUser] = useState(userman);

@@ -83,6 +83,54 @@
         "prepareTime": "2",
         "prepareSteps": "\naaaaaaaaaaaaa\naaaaaaaaaaaaa\naaaaaaaaaaaaa"
       }
+    },
+    {
+      "id": "f91b",
+      "data": {
+        "name": "Piruliro baby",
+        "dificulty": "2",
+        "isVegan": true,
+        "ingredients": "aaaaaaaaaa",
+        "servings": "2",
+        "prepareTime": "2",
+        "prepareSteps": "aaaaaaaaaa"
+      }
+    },
+    {
+      "id": "96ed",
+      "data": {
+        "name": "Feijoada cabulosa",
+        "dificulty": "2",
+        "isVegan": false,
+        "ingredients": "asasasasasasasas",
+        "servings": "3",
+        "prepareTime": "2",
+        "prepareSteps": "asasasasasasasas"
+      }
+    },
+    {
+      "id": "ddda",
+      "data": {
+        "name": "bla bla bla",
+        "dificulty": "4",
+        "isVegan": true,
+        "ingredients": "asasdasdqaswdasdsadsadsa",
+        "servings": "3",
+        "prepareTime": "4",
+        "prepareSteps": "sadasdsadsadsadsdsadsa"
+      }
+    },
+    {
+      "id": "464b",
+      "data": {
+        "name": "Bolo de chocolate",
+        "dificulty": "3",
+        "isVegan": false,
+        "ingredients": "3 ovos \n2 colheres de manteiga ( 40 gramas)\n200 ml de leite gelado\n200 gramas de farinha de trigo\nMeia colher de chá de fermento em pó ",
+        "servings": "4",
+        "prepareTime": "40",
+        "prepareSteps": "Misture todos os ingredientes secos e faça um buraco no meio da mistura, comece a adicionar os ingredientes molhados lentamente, misture por 5 minutos até obter uma mistura homogênea. \n\nCom o forno pré aquecido a 180 graus, coloque o bolo para assar durante 30 minutos, não abra o forno nos primeiros 20 minutos. \n\nPara checar se o bolo está pronto, após 20 minutos, insira uma faca seca na massa assando, se a faca sair limpa, tudo indica que seu bolo está pronto. Agora basta retirar do forno esfriar e servir."
+      }
     }
   ]
 }

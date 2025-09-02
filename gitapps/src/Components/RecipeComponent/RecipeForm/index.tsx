@@ -7,10 +7,17 @@ import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import AlertComponent from "../../AlertComponent";
+import { AlertProps } from "../../AlertComponent/types";
 
 function RecipeForm() {
   const navigate = useNavigate();
   const [recipe, setRecipe] = useState<RecipeSchema>();
+
+  const [alertProps, setAlertProps] = useState<AlertProps>({
+    children: "mensagem padrão ! ".toLocaleUpperCase(),
+    open: false,
+  });
+
   const {
     register,
     handleSubmit,
@@ -29,7 +36,10 @@ function RecipeForm() {
         })
         .then((response) => {
           if (response.status === 201) {
-            alert("Receita criada com sucesso redirecionando");
+            setAlertProps({
+              children: "Receita criada com sucesso",
+              open: true,
+            });
 
             setTimeout(() => {
               navigate("/recipelist");
@@ -45,7 +55,7 @@ function RecipeForm() {
   return (
     <>
       <TopDecorativeBar />
-      <AlertComponent children="Receita criada com sucesso!" open={true} />
+      <AlertComponent children={alertProps.children} open={alertProps.open} />
       <Container>
         <TopFormNav>
           <p>Criar sua</p> <span> receita</span>

@@ -4,9 +4,11 @@ import { AlertProps } from "./types";
 
 function AlertComponent({ children, open }: AlertProps) {
   return (
-    <Container open={open}>
-      <p>{children}</p>
-    </Container>
+    <>
+      <Container open={open}>
+        <p>{children}</p>
+      </Container>
+    </>
   );
 }
 

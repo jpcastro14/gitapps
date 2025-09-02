@@ -21,7 +21,9 @@ import { useNavigate } from "react-router-dom";
 
 function Recipelist() {
   const [recipes, setRecipes] = useState<IRecipe[]>();
-  const [filteredRecipes, setFilteredRecipes] = useState<IRecipe[]>();
+  const [filteredRecipes, setFilteredRecipes] = useState<
+    IRecipe[] | undefined
+  >();
   const [vegancolor, setVeganColor] = useState(false);
   const navigate = useNavigate();
 
@@ -35,26 +37,21 @@ function Recipelist() {
     fetchData();
   }, []);
 
-  function createFilter(event: React.ChangeEvent<HTMLInputElement>) {
-    //let parameter = event.target.value;
-
+  const createFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilteredRecipes(
       recipes?.filter((item) => item.data.name.startsWith(event.target.value))
     );
+  };
 
-    console.log(filteredRecipes);
-  }
-
-  function veganFIlter(): void {
-    setVeganColor(!vegancolor);
-    setFilteredRecipes(recipes?.filter((item) => item.data.isVegan == true));
-  }
-
-  function noVegan(): void {
-    setVeganColor(!vegancolor);
-    setFilteredRecipes(recipes);
-  }
-
+  const veganFIlter = (): void => {
+    if (vegancolor == false) {
+      setVeganColor(!vegancolor);
+      setFilteredRecipes(recipes?.filter((item) => item.data.isVegan == true));
+    } else {
+      setVeganColor(!vegancolor);
+      setFilteredRecipes(undefined);
+    }
+  };
   return (
     <>
       <TopDecorativeBar />
@@ -62,17 +59,11 @@ function Recipelist() {
         <SearchField>
           <label>Resultados</label>
 
-          {vegancolor == false ? (
-            <VeganButton $veganColor={vegancolor} onClick={veganFIlter}>
-              <img src={leaf} />
-            </VeganButton>
-          ) : (
-            <VeganButton $veganColor={vegancolor} onClick={noVegan}>
-              <img src={leaf} />
-            </VeganButton>
-          )}
+          <VeganButton $veganColor={vegancolor} onClick={veganFIlter}>
+            <img src={leaf} />
+          </VeganButton>
 
-          <input type="text" onChange={createFilter} />
+          <input type="text" onChange={() => createFilter} />
         </SearchField>
         <RecipeCardContainer>
           {filteredRecipes
@@ -112,7 +103,6 @@ function Recipelist() {
                     <RecipeProps>
                       <img src={clock} />
                       <span>
-                        {" "}
                         Fica pronto em {recipe.data.prepareTime} minutos
                       </span>
                     </RecipeProps>

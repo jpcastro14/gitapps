@@ -53,19 +53,18 @@ function Recipelist() {
   };
 
   const toggleParam = () => {
-    // setSearchParam((prevState) => !prevState);
     setSearchParam(!searchParam);
     console.log(searchParam);
   };
 
   const veganFIlter = (): void => {
-    if (vegancolor == false) {
-      setVeganColor(!vegancolor);
-      setFilteredRecipes(recipes?.filter((item) => item.data.isVegan == true));
-    } else {
-      setVeganColor(!vegancolor);
+    vegancolor == false
+      ? (setVeganColor(!vegancolor),
+        setFilteredRecipes(
+          recipes?.filter((item) => item.data.isVegan == true)
+        ))
+      : setVeganColor(!vegancolor),
       setFilteredRecipes(undefined);
-    }
   };
   return (
     <>

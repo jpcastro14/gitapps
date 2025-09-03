@@ -131,6 +131,18 @@
         "prepareTime": "40",
         "prepareSteps": "Misture todos os ingredientes secos e faça um buraco no meio da mistura, comece a adicionar os ingredientes molhados lentamente, misture por 5 minutos até obter uma mistura homogênea. \n\nCom o forno pré aquecido a 180 graus, coloque o bolo para assar durante 30 minutos, não abra o forno nos primeiros 20 minutos. \n\nPara checar se o bolo está pronto, após 20 minutos, insira uma faca seca na massa assando, se a faca sair limpa, tudo indica que seu bolo está pronto. Agora basta retirar do forno esfriar e servir."
       }
+    },
+    {
+      "id": "daa1",
+      "data": {
+        "name": "O Lorem Ipsum é um texto",
+        "dificulty": "5",
+        "isVegan": true,
+        "ingredients": "O Lorem Ipsum é um texto \nO Lorem Ipsum é um texto\nO Lorem Ipsum é um texto\nO Lorem Ipsum é um texto\nO Lorem Ipsum é um \nO Lorem \nO Lorem Ipsum é um textoO Lorem Ipsum é um texto",
+        "servings": "2",
+        "prepareTime": "20",
+        "prepareSteps": "O Lorem Ipsum é um \nO Lorem Ipsum é \nO Lorem Ipsum é um texto\nO Lorem Ipsum \nO Lorem "
+      }
     }
   ]
 }

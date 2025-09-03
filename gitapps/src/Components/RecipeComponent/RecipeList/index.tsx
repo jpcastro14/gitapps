@@ -25,6 +25,7 @@ function Recipelist() {
     IRecipe[] | undefined
   >();
   const [vegancolor, setVeganColor] = useState(false);
+  const [searchParam, setSearchParam] = useState<boolean>(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -43,6 +44,20 @@ function Recipelist() {
     );
   };
 
+  const ingredientsFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFilteredRecipes(
+      recipes?.filter((item) =>
+        item.data.ingredients.includes(event.target.value)
+      )
+    );
+  };
+
+  const toggleParam = () => {
+    // setSearchParam((prevState) => !prevState);
+    setSearchParam(!searchParam);
+    console.log(searchParam);
+  };
+
   const veganFIlter = (): void => {
     if (vegancolor == false) {
       setVeganColor(!vegancolor);
@@ -56,14 +71,22 @@ function Recipelist() {
     <>
       <TopDecorativeBar />
       <OverContainer>
+        <button onClick={toggleParam}>
+          {searchParam == true
+            ? "Buscando por ingrediente"
+            : "Buscando por nome"}
+        </button>
         <SearchField>
           <label>Resultados</label>
 
           <VeganButton $veganColor={vegancolor} onClick={veganFIlter}>
             <img src={leaf} />
           </VeganButton>
-
-          <input type="text" onChange={() => createFilter} />
+          {searchParam == true ? (
+            <input type="text" onChange={ingredientsFilter} />
+          ) : (
+            <input type="text" onChange={createFilter} />
+          )}
         </SearchField>
         <RecipeCardContainer>
           {filteredRecipes

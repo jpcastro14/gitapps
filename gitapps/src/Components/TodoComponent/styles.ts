@@ -7,7 +7,7 @@ interface ITaskArea {
 export const TodoContainer = styled.div`
   width: 100%;
   max-width: 1200px;
-  height: auto;
+  height: 100dvh;
   display: grid;
   margin: 0 auto;
   grid-template-columns: 100%;
@@ -15,7 +15,6 @@ export const TodoContainer = styled.div`
   border-radius: 10px;
   display: grid;
   grid-template-rows: 10% 10%;
-  overflow-y: scroll;
 `;
 export const TitleDiv = styled.div`
   background-color: var(--blue);
@@ -37,7 +36,7 @@ export const InputArea = styled.div`
   background-color: var(--blue);
   display: grid;
   grid-template-columns: 40% 20%;
-  grid-template-rows: 100%;
+  grid-template-rows: 80% 20%;
   input {
     height: 50%;
     background-color: white;
@@ -89,7 +88,7 @@ export const TaskArea = styled.div<ITaskArea>`
   }
   span {
     text-decoration: ${(props) =>
-      props.$finished == true ? "line-through" : "none"};
+    props.$finished == true ? "line-through" : "none"};
 
     color: ${(props) => (props.$finished == true ? "#cecece" : "black")};
   }

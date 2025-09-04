@@ -4,6 +4,7 @@ import { AuthProvider } from "./context/AuthProvider";
 import { ProtectedLayout } from "./Components/ProtectedLayout";
 import MainComponent from "./Components/MainComponent";
 import { UserProvider } from "./DataContext/UserContext";
+import { RecipeProvider } from "./DataContext/RecipeContext";
 import TodoApp from "./Components/TodoComponent";
 import RecipeApp from "./Components/RecipeComponent";
 import RecipeForm from "./Components/RecipeComponent/RecipeForm";
@@ -16,17 +17,20 @@ function App() {
       <AuthProvider>
         <UserProvider>
           <BrowserRouter>
-            <Routes>
-              <Route
-                path="/"
-                element={<ProtectedLayout children={<MainComponent />} />}
-              />
-              <Route path="/todo" element={<TodoApp />} />
-              <Route path="/recipe" element={<RecipeApp />} />
-              <Route path="/recipeform" element={<RecipeForm />} />
-              <Route path="/recipelist" element={<RecipeList />} />
-              <Route path="/recipeunit/:id" element={<RecipeUnit />} />
-            </Routes>
+            <RecipeProvider>
+              <Routes>
+                <Route
+                  path="/"
+                  element={<ProtectedLayout children={<MainComponent />} />}
+                />
+                <Route path="/todo" element={<TodoApp />} />
+
+                <Route path="/recipe" element={<RecipeApp />} />
+                <Route path="/recipeform" element={<RecipeForm />} />
+                <Route path="/recipelist" element={<RecipeList />} />
+                <Route path="/recipeunit/:id" element={<RecipeUnit />} />
+              </Routes>
+            </RecipeProvider>
           </BrowserRouter>
         </UserProvider>
       </AuthProvider>

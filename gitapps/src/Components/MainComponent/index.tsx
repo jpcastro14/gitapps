@@ -10,7 +10,6 @@ import { CardTest, Container, ContentArea, TitleDiv } from "./styles";
 import { useNavigate } from "react-router-dom";
 
 function MainComponent() {
-
   const navigate = useNavigate();
 
   return (
@@ -50,7 +49,11 @@ function MainComponent() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button onClick={() => navigate('/todo')} variant="outlined" fullWidth>
+              <Button
+                onClick={() => navigate("/todo")}
+                variant="outlined"
+                fullWidth
+              >
                 Testar
               </Button>
             </CardActions>
@@ -80,23 +83,20 @@ function MainComponent() {
                   fontSize: 20,
                 }}
               >
-                Um livro de receitas para fazer um jantar elaborado para os amigos, ou para agilizar a sua semana com pratos práticos
+                Um livro de receitas para fazer um jantar elaborado para os
+                amigos, ou para agilizar a sua semana com pratos práticos
               </Typography>
             </CardContent>
             <CardActions>
-              <Button onClick={() => navigate('/recipe')} variant="outlined" fullWidth>
+              <Button
+                onClick={() => navigate("/recipe")}
+                variant="outlined"
+                fullWidth
+              >
                 Testar
               </Button>
             </CardActions>
           </CardTest>
-
-          <Card>b</Card>
-          <Card>c</Card>
-          <Card>d</Card>
-          <Card>d</Card>
-          <Card>d</Card>
-          <Card>d</Card>
-          <Card>d</Card>
         </ContentArea>
       </Container>
     </>

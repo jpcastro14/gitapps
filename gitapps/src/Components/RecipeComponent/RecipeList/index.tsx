@@ -18,6 +18,8 @@ import person from "../../../assets/person.svg";
 import { IRecipe } from "../types/types";
 import leaf from "../../../assets/leaf.svg";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RecipeContext } from "../../../DataContext/RecipeContext";
 
 function Recipelist() {
   const [recipes, setRecipes] = useState<IRecipe[]>();
@@ -26,8 +28,11 @@ function Recipelist() {
   >();
   const [vegancolor, setVeganColor] = useState(false);
   const navigate = useNavigate();
+  const data = useContext(RecipeContext);
 
-  useEffect(() => {
+  console.log(data);
+
+  /* useEffect(() => {
     const fetchData = async () => {
       await axios
         .get("http://localhost:3000/recipes")
@@ -35,7 +40,7 @@ function Recipelist() {
         .catch((error) => console.log(error));
     };
     fetchData();
-  }, []);
+  }, []); */
 
   const createFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilteredRecipes(
@@ -89,7 +94,7 @@ function Recipelist() {
                   <RecipeCode>{recipe.id}</RecipeCode>
                 </RecipeCard>
               ))
-            : recipes?.map((recipe) => (
+            : data?.map((recipe) => (
                 <RecipeCard
                   onClick={() => navigate(`/recipeunit/${recipe.id}`)}
                 >

@@ -7,7 +7,7 @@ export interface IUserContext {
   project: string;
 }
 
-export const UserContext = createContext<IUserContext | undefined>(undefined); // Aqui defino o que será o contexto, nesse caso, informações de usuário.
+export const UserContext = createContext<IUserContext[] | undefined>(undefined); // Aqui defino o que será o contexto, nesse caso, informações de usuário.
 
 type UserProviderProps = {
   children: React.ReactNode;

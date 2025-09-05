@@ -8,7 +8,7 @@ import {
   PrepareStepsContainer,
   TopDecorativeBarEdit,
 } from "./styles";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Button,
@@ -22,6 +22,7 @@ import {
 } from "@mui/material";
 
 import { useForm } from "react-hook-form";
+import { RecipeContext } from "../../../DataContext/RecipeContext";
 
 function RecipeUnit() {
   const { id } = useParams();
@@ -31,6 +32,13 @@ function RecipeUnit() {
   const { register, handleSubmit } = useForm<IRecipe>();
   const list = recipe?.data.ingredients.split(/[,][ ]/).join("\n");
 
+  const testrecipe = useContext<IRecipe[] | undefined>(RecipeContext);
+  console.log(testrecipe);
+
+  const recrec = testrecipe?.find((item) => item.id.toString() == id);
+
+  console.log(recrec);
+
   useEffect(() => {
     const fetchdata = async () => {
       await axios
@@ -39,10 +47,9 @@ function RecipeUnit() {
         .catch(({ error }) => console.log(error));
     };
     fetchdata();
-  }, []);
 
-  console.log(recipe);
-  /* Teste comentario git */
+    //const recipe = testrecipe?.filter((item) => item.id.toString() == id);
+  }, []);
 
   function handleClose(): void {
     setIsmodalOpen(!ismodalOpen);

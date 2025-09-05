@@ -29,8 +29,6 @@ function Recipelist() {
   const navigate = useNavigate();
   const recipe = useContext(RecipeContext);
 
-  console.log(recipe);
-
   const createFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilteredRecipes(
       recipes?.filter((item) => item.data.name.startsWith(event.target.value))
@@ -61,6 +59,7 @@ function Recipelist() {
           {filteredRecipes
             ? filteredRecipes?.map((recipe) => (
                 <RecipeCard
+                  key={recipe.id}
                   onClick={() => navigate(`/recipeunit/${recipe.id}`)}
                 >
                   <RecipeImage />
@@ -84,6 +83,7 @@ function Recipelist() {
             : /* ------------------------------------------------- */
               recipe?.map((recipe) => (
                 <RecipeCard
+                  key={recipe.id}
                   onClick={() => navigate(`/recipeunit/${recipe.id}`)}
                 >
                   <RecipeImage />

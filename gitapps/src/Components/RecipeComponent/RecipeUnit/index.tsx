@@ -29,6 +29,7 @@ function RecipeUnit() {
   const [newRecipe, setNewRecipe] = useState<IRecipe>();
   const [ismodalOpen, setIsmodalOpen] = useState<boolean>(false);
   const { register, handleSubmit } = useForm<IRecipe>();
+  const list = recipe?.data.ingredients.split(/[,][ ]/).join("\n");
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -39,8 +40,6 @@ function RecipeUnit() {
     };
     fetchdata();
   }, []);
-
-  const list = recipe?.data.ingredients.split(/[,][ ]/).join("\n");
 
   function handleClose(): void {
     setIsmodalOpen(!ismodalOpen);

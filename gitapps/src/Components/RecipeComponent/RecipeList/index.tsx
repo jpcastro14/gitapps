@@ -27,20 +27,9 @@ function Recipelist() {
     IRecipe[] | undefined
   >();
   const [vegancolor, setVeganColor] = useState(false);
+  const [searchParam, setSearchParam] = useState<boolean>(false);
   const navigate = useNavigate();
   const data = useContext(RecipeContext);
-
-  console.log(data);
-
-  /* useEffect(() => {
-    const fetchData = async () => {
-      await axios
-        .get("http://localhost:3000/recipes")
-        .then((data) => setRecipes(data.data))
-        .catch((error) => console.log(error));
-    };
-    fetchData();
-  }, []); */
 
   const createFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilteredRecipes(
@@ -48,27 +37,48 @@ function Recipelist() {
     );
   };
 
+  const ingredientsFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFilteredRecipes(
+      recipes?.filter((item) =>
+        item.data.ingredients.includes(event.target.value)
+      )
+    );
+  };
+
+  const toggleParam = () => {
+    setSearchParam(!searchParam);
+    console.log(searchParam);
+  };
+
   const veganFIlter = (): void => {
-    if (vegancolor == false) {
-      setVeganColor(!vegancolor);
-      setFilteredRecipes(recipes?.filter((item) => item.data.isVegan == true));
-    } else {
-      setVeganColor(!vegancolor);
+    vegancolor == false
+      ? (setVeganColor(!vegancolor),
+        setFilteredRecipes(
+          recipes?.filter((item) => item.data.isVegan == true)
+        ))
+      : setVeganColor(!vegancolor),
       setFilteredRecipes(undefined);
-    }
   };
   return (
     <>
       <TopDecorativeBar />
       <OverContainer>
+        <button onClick={toggleParam}>
+          {searchParam == true
+            ? "Buscando por ingrediente"
+            : "Buscando por nome"}
+        </button>
         <SearchField>
           <label>Resultados</label>
 
           <VeganButton $veganColor={vegancolor} onClick={veganFIlter}>
             <img src={leaf} />
           </VeganButton>
-
-          <input type="text" onChange={() => createFilter} />
+          {searchParam == true ? (
+            <input type="text" onChange={ingredientsFilter} />
+          ) : (
+            <input type="text" onChange={createFilter} />
+          )}
         </SearchField>
         <RecipeCardContainer>
           {filteredRecipes

@@ -12,7 +12,6 @@ import {
   VeganButton,
 } from "./styles";
 import { TopDecorativeBar } from "../RecipeForm/styles";
-import axios from "axios";
 import clock from "../../../assets/clock.svg";
 import person from "../../../assets/person.svg";
 import { IRecipe } from "../types/types";
@@ -27,27 +26,15 @@ function Recipelist() {
     IRecipe[] | undefined
   >();
   const [vegancolor, setVeganColor] = useState(false);
-  const [searchParam, setSearchParam] = useState<boolean>(false);
   const navigate = useNavigate();
-  const data = useContext(RecipeContext);
+  const recipe = useContext(RecipeContext);
+
+  console.log(recipe);
 
   const createFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilteredRecipes(
       recipes?.filter((item) => item.data.name.startsWith(event.target.value))
     );
-  };
-
-  const ingredientsFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFilteredRecipes(
-      recipes?.filter((item) =>
-        item.data.ingredients.includes(event.target.value)
-      )
-    );
-  };
-
-  const toggleParam = () => {
-    setSearchParam(!searchParam);
-    console.log(searchParam);
   };
 
   const veganFIlter = (): void => {
@@ -63,22 +50,12 @@ function Recipelist() {
     <>
       <TopDecorativeBar />
       <OverContainer>
-        <button onClick={toggleParam}>
-          {searchParam == true
-            ? "Buscando por ingrediente"
-            : "Buscando por nome"}
-        </button>
         <SearchField>
           <label>Resultados</label>
 
           <VeganButton $veganColor={vegancolor} onClick={veganFIlter}>
             <img src={leaf} />
           </VeganButton>
-          {searchParam == true ? (
-            <input type="text" onChange={ingredientsFilter} />
-          ) : (
-            <input type="text" onChange={createFilter} />
-          )}
         </SearchField>
         <RecipeCardContainer>
           {filteredRecipes
@@ -104,7 +81,8 @@ function Recipelist() {
                   <RecipeCode>{recipe.id}</RecipeCode>
                 </RecipeCard>
               ))
-            : data?.map((recipe) => (
+            : /* ------------------------------------------------- */
+              recipe?.map((recipe) => (
                 <RecipeCard
                   onClick={() => navigate(`/recipeunit/${recipe.id}`)}
                 >

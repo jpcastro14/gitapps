@@ -41,6 +41,9 @@ function RecipeUnit() {
     fetchdata();
   }, []);
 
+  console.log(recipe);
+  /* Teste comentario git */
+
   function handleClose(): void {
     setIsmodalOpen(!ismodalOpen);
   }

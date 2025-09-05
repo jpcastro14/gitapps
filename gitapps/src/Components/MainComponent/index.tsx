@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { CardTest, Container, ContentArea, TitleDiv } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function MainComponent() {
   const navigate = useNavigate();

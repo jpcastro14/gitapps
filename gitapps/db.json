@@ -21,14 +21,14 @@
       "isVegan": true
     },
     {
-      "id": "85ac",
-      "name": "Feijoada cabulosa",
-      "dificulty": "1",
+      "name": "Teste de receita reeditada",
+      "dificulty": "5",
       "isVegan": false,
-      "ingredients": "aaaaaaaaaa aaa",
-      "servings": "1",
-      "prepareTime": "1",
-      "prepareSteps": "aaaaa"
+      "ingredients": "500 gramas de arroz\n6 dentes de alho\n50 ml de oleo\n1 litro de agua\n1 colher de chá de sal",
+      "servings": "6",
+      "prepareTime": "30",
+      "prepareSteps": "Refogue o arroz junto com o alho, após 5 minutos acrescente o sal por completo, adicione a agua e deixe em fogo médio até que a agua reduza até a altura do arroz, abaixe o fogo e tampe a panela até que a agua seque por completo",
+      "id": "85ac"
     },
     {
       "id": "a344",

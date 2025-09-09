@@ -8,6 +8,7 @@ import {
   PrepareStepsContainer,
   TopDecorativeBarEdit,
 } from "./styles";
+import AlertComponent from "../../AlertComponent";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
@@ -21,12 +22,26 @@ import {
 
 import { useForm } from "react-hook-form";
 
+import { AlertProps } from "../../AlertComponent/types";
+import { recipeSchema, RecipeSchema } from "../types/schemas";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 function RecipeUnit() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState<IRecipe>();
-  const [newRecipe, setNewRecipe] = useState<IRecipe>();
   const [ismodalOpen, setIsmodalOpen] = useState<boolean>(false);
-  const { register, handleSubmit } = useForm<IRecipe>();
+  const [alertProps, setAlertProps] = useState<AlertProps>({
+    children: "mensagem padrão ! ".toLocaleUpperCase(),
+    open: false,
+  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RecipeSchema>({
+    mode: "onSubmit",
+    resolver: zodResolver(recipeSchema),
+  });
   const list = recipe?.ingredients.split(/[,][ ]/).join("\n");
 
   useEffect(() => {
@@ -37,49 +52,59 @@ function RecipeUnit() {
         .catch(({ error }) => console.log(error));
     };
     fetchdata();
-
-    //const recipe = testrecipe?.filter((item) => item.id.toString() == id);
   }, []);
 
   function handleClose(): void {
     setIsmodalOpen(!ismodalOpen);
   }
 
-  function handleEdit(data: IRecipe): void {
-    setNewRecipe(data);
-    console.log(newRecipe);
-
+  function handleEdit(data: RecipeSchema): void {
     axios
       .put(`http://localhost:3000/recipes/${id}/`, data)
-      .then((res) => console.log(res))
+      .then((res) => {
+        if (res.status === 200) {
+          setAlertProps({
+            children: "Receita Editada com sucesso!",
+            open: true,
+          });
+          setTimeout(() => {
+            window.location.reload();
+          }, 3000);
+        }
+      })
       .catch((error) => console.log(error));
   }
 
   return (
     <>
+      <AlertComponent open={alertProps.open} children={alertProps.children} />
       <Modal open={ismodalOpen} onClose={handleClose}>
         {/* ---------------------------------- Formulário de edição ---------------------------------- */}
         <ModalForm>
           <h2>Editar receita</h2>
-          <Grid2 container spacing={1} columns={{ xs: 1, sm: 1, md: 4 }}>
+          <Grid2 container spacing={1} columns={{ xs: 1, sm: 1, md: 3 }}>
             <Grid2 size={{ xs: 1, sm: 1, md: 4 }} container>
               <FormLabel>Nome da receita</FormLabel>
               <TextField
                 fullWidth
                 variant="outlined"
                 size="small"
+                error={!!errors.name}
+                helperText={errors.name?.message}
                 placeholder={recipe?.name}
                 {...register("name", { required: true })}
               />
             </Grid2>
             {/* ------------------------------ */}
 
-            <Grid2 size={{ xs: 1, sm: 1, md: 2 }} container>
+            <Grid2 size={{ xs: 1, sm: 1, md: 1 }} container>
               <FormLabel>Serve quantas pessoas</FormLabel>
               <TextField
                 fullWidth
                 size="small"
                 type="number"
+                error={!!errors.servings}
+                helperText={errors.servings?.message}
                 placeholder={recipe?.servings.toString()}
                 {...register("servings", { required: false })}
               />
@@ -93,6 +118,8 @@ function RecipeUnit() {
                 fullWidth
                 variant="outlined"
                 size="small"
+                error={!!errors.prepareTime}
+                helperText={errors.prepareTime?.message}
                 placeholder={recipe?.prepareTime.toString()}
                 {...register("prepareTime", { required: true })}
               />
@@ -103,6 +130,9 @@ function RecipeUnit() {
               <TextField
                 type="number"
                 size="small"
+                slotProps={{ htmlInput: { type: "number", min: 0, max: 5 } }}
+                error={!!errors.dificulty}
+                helperText={errors.dificulty?.message}
                 fullWidth
                 placeholder={recipe?.dificulty.toString()}
                 {...register("dificulty")}
@@ -117,6 +147,8 @@ function RecipeUnit() {
                 fullWidth
                 minRows={2}
                 maxRows={4}
+                error={!!errors.ingredients}
+                helperText={errors.ingredients?.message}
                 size="medium"
                 placeholder={recipe?.ingredients}
                 {...register("ingredients")}
@@ -131,6 +163,8 @@ function RecipeUnit() {
                 fullWidth
                 minRows={2}
                 maxRows={4}
+                error={!!errors.prepareSteps}
+                helperText={errors.prepareSteps?.message}
                 size="medium"
                 placeholder={recipe?.prepareSteps}
                 {...register("prepareSteps")}

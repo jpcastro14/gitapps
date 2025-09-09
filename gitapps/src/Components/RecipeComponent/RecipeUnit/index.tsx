@@ -8,7 +8,7 @@ import {
   PrepareStepsContainer,
   TopDecorativeBarEdit,
 } from "./styles";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Button,
@@ -16,13 +16,10 @@ import {
   FormLabel,
   Grid2,
   Modal,
-  Rating,
-  Slider,
   TextField,
 } from "@mui/material";
 
 import { useForm } from "react-hook-form";
-import { RecipeContext } from "../../../DataContext/RecipeContext";
 
 function RecipeUnit() {
   const { id } = useParams();
@@ -30,14 +27,7 @@ function RecipeUnit() {
   const [newRecipe, setNewRecipe] = useState<IRecipe>();
   const [ismodalOpen, setIsmodalOpen] = useState<boolean>(false);
   const { register, handleSubmit } = useForm<IRecipe>();
-  const list = recipe?.data.ingredients.split(/[,][ ]/).join("\n");
-
-  const testrecipe = useContext<IRecipe[] | undefined>(RecipeContext);
-  console.log(testrecipe);
-
-  const recrec = testrecipe?.find((item) => item.id.toString() == id);
-
-  console.log(recrec);
+  const list = recipe?.ingredients.split(/[,][ ]/).join("\n");
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -78,8 +68,8 @@ function RecipeUnit() {
                 fullWidth
                 variant="outlined"
                 size="small"
-                placeholder={recipe?.data.name}
-                {...register("data.name", { required: true })}
+                placeholder={recipe?.name}
+                {...register("name", { required: true })}
               />
             </Grid2>
             {/* ------------------------------ */}
@@ -90,8 +80,8 @@ function RecipeUnit() {
                 fullWidth
                 size="small"
                 type="number"
-                placeholder={recipe?.data.servings.toString()}
-                {...register("data.servings", { required: false })}
+                placeholder={recipe?.servings.toString()}
+                {...register("servings", { required: false })}
               />
             </Grid2>
             {/* ------------------------------ */}
@@ -103,8 +93,8 @@ function RecipeUnit() {
                 fullWidth
                 variant="outlined"
                 size="small"
-                placeholder={recipe?.data.prepareTime.toString()}
-                {...register("data.prepareTime", { required: true })}
+                placeholder={recipe?.prepareTime.toString()}
+                {...register("prepareTime", { required: true })}
               />
             </Grid2>
 
@@ -114,8 +104,8 @@ function RecipeUnit() {
                 type="number"
                 size="small"
                 fullWidth
-                value={recipe?.data.dificulty.toString()}
-                {...register("data.dificulty")}
+                placeholder={recipe?.dificulty.toString()}
+                {...register("dificulty")}
               />
             </Grid2>
 
@@ -128,8 +118,8 @@ function RecipeUnit() {
                 minRows={2}
                 maxRows={4}
                 size="medium"
-                placeholder={recipe?.data.ingredients}
-                {...register("data.ingredients")}
+                placeholder={recipe?.ingredients}
+                {...register("ingredients")}
               />
             </Grid2>
 
@@ -142,16 +132,16 @@ function RecipeUnit() {
                 minRows={2}
                 maxRows={4}
                 size="medium"
-                placeholder={recipe?.data.prepareSteps}
-                {...register("data.prepareSteps")}
+                placeholder={recipe?.prepareSteps}
+                {...register("prepareSteps")}
               />
             </Grid2>
             <Grid2 size={{ sm: 1, md: 4, lg: 4 }} alignSelf={"center"}>
               <FormLabel>Receita vegana</FormLabel>
               <Checkbox
                 size="small"
-                value={recipe?.data.isVegan}
-                {...register("data.isVegan", { required: false })}
+                value={recipe?.isVegan}
+                {...register("isVegan", { required: false })}
               />
             </Grid2>
 
@@ -193,14 +183,14 @@ function RecipeUnit() {
       </TopDecorativeBarEdit>
       <Container>
         <IngredientsContainer>
-          <h1>{recipe?.data.name}</h1>
+          <h1>{recipe?.name}</h1>
           <h2>Ingredientes:</h2>
           <p>{list}</p>
         </IngredientsContainer>
         <Divider />
         <PrepareStepsContainer>
           <h2>Como preparar:</h2>
-          <p>{recipe?.data.prepareSteps}</p>
+          <p>{recipe?.prepareSteps}</p>
         </PrepareStepsContainer>
       </Container>
       {/* ---------------------------------- Display da receita ---------------------------------- */}

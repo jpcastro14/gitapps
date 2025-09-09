@@ -1,148 +1,124 @@
 {
   "recipes": [
     {
-      "id": "6693",
-      "data": {
-        "name": "Bolo de Cenoura",
-        "servings": "8",
-        "prepareTime": "50",
-        "dificulty": "2",
-        "ingredients": "3 cenouras, 3 ovos, 2 xícaras de farinha, 1 xícara de óleo, 1 xícara de açúcar",
-        "prepareSteps": "Bata as cenouras com os ovos e o óleo, misture com os ingredientes secos e asse por 35 minutos.",
-        "isVegan": false
-      }
+      "name": "bla bla bla",
+      "servings": "3",
+      "prepareTime": "4",
+      "dificulty": "2",
+      "ingredients": "alalaalalalalalalalall ala al ala lalalala la  ",
+      "prepareSteps": "lalalalalaa  alalalaa lalalalala alalalalala aoaoaoaoa jejeje ahshas",
+      "isVegan": "false",
+      "id": "6693"
     },
     {
       "id": "6694",
-      "data": {
-        "name": "Salada de Quinoa",
-        "servings": "4",
-        "prepareTime": "15",
-        "dificulty": "1",
-        "ingredients": "1 xícara de quinoa cozida, 1 pepino, 1 tomate, azeite, limão, sal",
-        "prepareSteps": "Misture a quinoa com os legumes e tempere com azeite, limão e sal.",
-        "isVegan": true
-      }
+      "name": "Salada de Quinoa",
+      "servings": "4",
+      "prepareTime": "15",
+      "dificulty": "1",
+      "ingredients": "1 xícara de quinoa cozida, 1 pepino, 1 tomate, azeite, limão, sal",
+      "prepareSteps": "Misture a quinoa com os legumes e tempere com azeite, limão e sal.",
+      "isVegan": true
     },
     {
       "id": "85ac",
-      "data": {
-        "name": "Feijoada cabulosa",
-        "dificulty": "1",
-        "isVegan": false,
-        "ingredients": "aaaaaaaaaa aaa",
-        "servings": "1",
-        "prepareTime": "1",
-        "prepareSteps": "aaaaa"
-      }
+      "name": "Feijoada cabulosa",
+      "dificulty": "1",
+      "isVegan": false,
+      "ingredients": "aaaaaaaaaa aaa",
+      "servings": "1",
+      "prepareTime": "1",
+      "prepareSteps": "aaaaa"
     },
     {
       "id": "a344",
-      "data": {
-        "name": "Feijoada cabulosa",
-        "dificulty": "2",
-        "isVegan": false,
-        "ingredients": "feijão\narroz\nbacon\ncalabresa\ncouve",
-        "servings": "2",
-        "prepareTime": "2",
-        "prepareSteps": "junte tudo bem junto, cozinhe tudo bem cozido, sirva tudo bem servido, coma tudo bem comido"
-      }
+      "name": "Feijoada cabulosa",
+      "dificulty": "2",
+      "isVegan": false,
+      "ingredients": "feijão\narroz\nbacon\ncalabresa\ncouve",
+      "servings": "2",
+      "prepareTime": "2",
+      "prepareSteps": "junte tudo bem junto, cozinhe tudo bem cozido, sirva tudo bem servido, coma tudo bem comido"
     },
     {
       "id": "d97a",
-      "data": {
-        "name": "Piruliro baby",
-        "dificulty": "1",
-        "isVegan": false,
-        "ingredients": "aaaaaaaaaaa",
-        "servings": "1",
-        "prepareTime": "1",
-        "prepareSteps": "bbb"
-      }
+      "name": "Piruliro baby",
+      "dificulty": "1",
+      "isVegan": false,
+      "ingredients": "aaaaaaaaaaa",
+      "servings": "1",
+      "prepareTime": "1",
+      "prepareSteps": "bbb"
     },
     {
       "id": "aff6",
-      "data": {
-        "name": "Feijoada cabulosa",
-        "dificulty": "5",
-        "isVegan": true,
-        "ingredients": "qqqqqqqqqq\nqqqqqqqqqq\nqqqqqq\nqqqqqqqqqqqqqqqqqqq\nqqqqqqqqqq\nqqqqqq",
-        "servings": "5",
-        "prepareTime": "120",
-        "prepareSteps": "aaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaa  aaaaa\naaaaaaaaaaaaaaaaaaaaa\naaaaaaa aaaaa\naaaaaaaaaa\naaaaaaaaaaaaaaaaaaaaa"
-      }
+      "name": "Feijoada cabulosa",
+      "dificulty": "5",
+      "isVegan": true,
+      "ingredients": "qqqqqqqqqq\nqqqqqqqqqq\nqqqqqq\nqqqqqqqqqqqqqqqqqqq\nqqqqqqqqqq\nqqqqqq",
+      "servings": "5",
+      "prepareTime": "120",
+      "prepareSteps": "aaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaa  aaaaa\naaaaaaaaaaaaaaaaaaaaa\naaaaaaa aaaaa\naaaaaaaaaa\naaaaaaaaaaaaaaaaaaaaa"
     },
     {
       "id": "1f19",
-      "data": {
-        "name": "Receita teste timeout",
-        "dificulty": "2",
-        "isVegan": true,
-        "ingredients": "aaaaaaaaaaaaa\naaaaaaaaaaaaa\naaaaaaaaaaaaa",
-        "servings": "2",
-        "prepareTime": "2",
-        "prepareSteps": "\naaaaaaaaaaaaa\naaaaaaaaaaaaa\naaaaaaaaaaaaa"
-      }
+      "name": "Receita teste timeout",
+      "dificulty": "2",
+      "isVegan": true,
+      "ingredients": "aaaaaaaaaaaaa\naaaaaaaaaaaaa\naaaaaaaaaaaaa",
+      "servings": "2",
+      "prepareTime": "2",
+      "prepareSteps": "\naaaaaaaaaaaaa\naaaaaaaaaaaaa\naaaaaaaaaaaaa"
     },
     {
       "id": "f91b",
-      "data": {
-        "name": "Piruliro baby",
-        "dificulty": "2",
-        "isVegan": true,
-        "ingredients": "aaaaaaaaaa",
-        "servings": "2",
-        "prepareTime": "2",
-        "prepareSteps": "aaaaaaaaaa"
-      }
+      "name": "Piruliro baby",
+      "dificulty": "2",
+      "isVegan": true,
+      "ingredients": "aaaaaaaaaa",
+      "servings": "2",
+      "prepareTime": "2",
+      "prepareSteps": "aaaaaaaaaa"
     },
     {
       "id": "96ed",
-      "data": {
-        "name": "Feijoada cabulosa",
-        "dificulty": "2",
-        "isVegan": false,
-        "ingredients": "asasasasasasasas",
-        "servings": "3",
-        "prepareTime": "2",
-        "prepareSteps": "asasasasasasasas"
-      }
+      "name": "Feijoada cabulosa",
+      "dificulty": "2",
+      "isVegan": false,
+      "ingredients": "asasasasasasasas",
+      "servings": "3",
+      "prepareTime": "2",
+      "prepareSteps": "asasasasasasasas"
     },
     {
       "id": "ddda",
-      "data": {
-        "name": "bla bla bla",
-        "dificulty": "4",
-        "isVegan": true,
-        "ingredients": "asasdasdqaswdasdsadsadsa",
-        "servings": "3",
-        "prepareTime": "4",
-        "prepareSteps": "sadasdsadsadsadsdsadsa"
-      }
+      "name": "bla bla bla",
+      "dificulty": "4",
+      "isVegan": true,
+      "ingredients": "asasdasdqaswdasdsadsadsa",
+      "servings": "3",
+      "prepareTime": "4",
+      "prepareSteps": "sadasdsadsadsadsdsadsa"
     },
     {
       "id": "464b",
-      "data": {
-        "name": "Bolo de chocolate",
-        "dificulty": "3",
-        "isVegan": false,
-        "ingredients": "3 ovos \n2 colheres de manteiga ( 40 gramas)\n200 ml de leite gelado\n200 gramas de farinha de trigo\nMeia colher de chá de fermento em pó ",
-        "servings": "4",
-        "prepareTime": "40",
-        "prepareSteps": "Misture todos os ingredientes secos e faça um buraco no meio da mistura, comece a adicionar os ingredientes molhados lentamente, misture por 5 minutos até obter uma mistura homogênea. \n\nCom o forno pré aquecido a 180 graus, coloque o bolo para assar durante 30 minutos, não abra o forno nos primeiros 20 minutos. \n\nPara checar se o bolo está pronto, após 20 minutos, insira uma faca seca na massa assando, se a faca sair limpa, tudo indica que seu bolo está pronto. Agora basta retirar do forno esfriar e servir."
-      }
+      "name": "Bolo de chocolate",
+      "dificulty": "3",
+      "isVegan": false,
+      "ingredients": "3 ovos \n2 colheres de manteiga ( 40 gramas)\n200 ml de leite gelado\n200 gramas de farinha de trigo\nMeia colher de chá de fermento em pó ",
+      "servings": "4",
+      "prepareTime": "40",
+      "prepareSteps": "Misture todos os ingredientes secos e faça um buraco no meio da mistura, comece a adicionar os ingredientes molhados lentamente, misture por 5 minutos até obter uma mistura homogênea. \n\nCom o forno pré aquecido a 180 graus, coloque o bolo para assar durante 30 minutos, não abra o forno nos primeiros 20 minutos. \n\nPara checar se o bolo está pronto, após 20 minutos, insira uma faca seca na massa assando, se a faca sair limpa, tudo indica que seu bolo está pronto. Agora basta retirar do forno esfriar e servir."
     },
     {
       "id": "daa1",
-      "data": {
-        "name": "O Lorem Ipsum é um texto",
-        "dificulty": "5",
-        "isVegan": true,
-        "ingredients": "O Lorem Ipsum é um texto \nO Lorem Ipsum é um texto\nO Lorem Ipsum é um texto\nO Lorem Ipsum é um texto\nO Lorem Ipsum é um \nO Lorem \nO Lorem Ipsum é um textoO Lorem Ipsum é um texto",
-        "servings": "2",
-        "prepareTime": "20",
-        "prepareSteps": "O Lorem Ipsum é um \nO Lorem Ipsum é \nO Lorem Ipsum é um texto\nO Lorem Ipsum \nO Lorem "
-      }
+      "name": "O Lorem Ipsum é um texto",
+      "dificulty": "5",
+      "isVegan": true,
+      "ingredients": "O Lorem Ipsum é um texto \nO Lorem Ipsum é um texto\nO Lorem Ipsum é um texto\nO Lorem Ipsum é um texto\nO Lorem Ipsum é um \nO Lorem \nO Lorem Ipsum é um textoO Lorem Ipsum é um texto",
+      "servings": "2",
+      "prepareTime": "20",
+      "prepareSteps": "O Lorem Ipsum é um \nO Lorem Ipsum é \nO Lorem Ipsum é um texto\nO Lorem Ipsum \nO Lorem "
     }
   ]
 }

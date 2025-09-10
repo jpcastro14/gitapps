@@ -24,7 +24,7 @@ function Recipelist() {
   const [filteredRecipes, setFilteredRecipes] = useState<
     IRecipe[] | undefined
   >();
-  const [vegancolor, setVeganColor] = useState(false);
+  const [vegancolor, setVeganColor] = useState<boolean>(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,7 +47,7 @@ function Recipelist() {
       );
 
       setFilteredRecipes(
-        recipes?.filter((item) => item.name.startsWith(formated))
+        recipes?.filter((item) => item.name.includes(formated))
       );
     }
 
@@ -62,11 +62,14 @@ function Recipelist() {
   };
 
   const veganFIlter = (): void => {
-    vegancolor == false
-      ? (setVeganColor(!vegancolor),
-        setFilteredRecipes(recipes?.filter((item) => item.isVegan == true)))
-      : setVeganColor(!vegancolor),
+    if (vegancolor == false) {
+      setFilteredRecipes(recipes?.filter((item) => item.isVegan == true));
+      setVeganColor(!vegancolor);
+      console.log(filteredRecipes);
+    } else {
       setFilteredRecipes(undefined);
+      setVeganColor(!vegancolor);
+    }
   };
   return (
     <>
@@ -99,7 +102,13 @@ function Recipelist() {
                       <span> Fica pronto em {recipe.prepareTime} minutos</span>
                     </RecipeProps>
                   </RecipePropsDiv>
-                  <RecipeCode>{recipe.id}</RecipeCode>
+                  {recipe.isVegan ? (
+                    <VeganButton $veganColor={vegancolor} onClick={veganFIlter}>
+                      <img src={leaf} />
+                    </VeganButton>
+                  ) : (
+                    ""
+                  )}
                 </RecipeCard>
               ))
             : /* ------------------------------------------------- */
@@ -119,8 +128,14 @@ function Recipelist() {
                       <img src={clock} />
                       <span>Fica pronto em {recipe.prepareTime} minutos</span>
                     </RecipeProps>
+                    {recipe.isVegan ? (
+                      <VeganButton $veganColor={true} onClick={veganFIlter}>
+                        <img src={leaf} />
+                      </VeganButton>
+                    ) : (
+                      ""
+                    )}
                   </RecipePropsDiv>
-                  <RecipeCode>{recipe.id}</RecipeCode>
                 </RecipeCard>
               ))}
         </RecipeCardContainer>

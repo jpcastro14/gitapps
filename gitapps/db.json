@@ -1,124 +1,54 @@
 {
   "recipes": [
     {
-      "name": "bla bla bla",
-      "servings": "3",
-      "prepareTime": "4",
-      "dificulty": "2",
-      "ingredients": "alalaalalalalalalalall ala al ala lalalala la  ",
-      "prepareSteps": "lalalalalaa  alalalaa lalalalala alalalalala aoaoaoaoa jejeje ahshas",
-      "isVegan": "false",
-      "id": "6693"
-    },
-    {
-      "id": "6694",
-      "name": "Salada de Quinoa",
-      "servings": "4",
-      "prepareTime": "15",
-      "dificulty": "1",
-      "ingredients": "1 xícara de quinoa cozida, 1 pepino, 1 tomate, azeite, limão, sal",
-      "prepareSteps": "Misture a quinoa com os legumes e tempere com azeite, limão e sal.",
-      "isVegan": true
-    },
-    {
-      "name": "Teste de receita reeditada",
+      "id": "d4f8",
+      "name": "Receita não vegana",
       "dificulty": "5",
       "isVegan": false,
-      "ingredients": "500 gramas de arroz\n6 dentes de alho\n50 ml de oleo\n1 litro de agua\n1 colher de chá de sal",
-      "servings": "6",
-      "prepareTime": "30",
-      "prepareSteps": "Refogue o arroz junto com o alho, após 5 minutos acrescente o sal por completo, adicione a agua e deixe em fogo médio até que a agua reduza até a altura do arroz, abaixe o fogo e tampe a panela até que a agua seque por completo",
-      "id": "85ac"
+      "ingredients": "kjsadgfuyasvduayswgfdsaugaspiugd",
+      "servings": "4",
+      "prepareTime": "5",
+      "prepareSteps": "não vegana"
     },
     {
-      "id": "a344",
-      "name": "Feijoada cabulosa",
-      "dificulty": "2",
-      "isVegan": false,
-      "ingredients": "feijão\narroz\nbacon\ncalabresa\ncouve",
-      "servings": "2",
-      "prepareTime": "2",
-      "prepareSteps": "junte tudo bem junto, cozinhe tudo bem cozido, sirva tudo bem servido, coma tudo bem comido"
-    },
-    {
-      "id": "d97a",
-      "name": "Piruliro baby",
-      "dificulty": "1",
-      "isVegan": false,
-      "ingredients": "aaaaaaaaaaa",
-      "servings": "1",
-      "prepareTime": "1",
-      "prepareSteps": "bbb"
-    },
-    {
-      "id": "aff6",
-      "name": "Feijoada cabulosa",
+      "id": "447f",
+      "name": "Receita vegana",
       "dificulty": "5",
       "isVegan": true,
-      "ingredients": "qqqqqqqqqq\nqqqqqqqqqq\nqqqqqq\nqqqqqqqqqqqqqqqqqqq\nqqqqqqqqqq\nqqqqqq",
+      "ingredients": "mato mato mato e mato",
       "servings": "5",
-      "prepareTime": "120",
-      "prepareSteps": "aaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaa  aaaaa\naaaaaaaaaaaaaaaaaaaaa\naaaaaaa aaaaa\naaaaaaaaaa\naaaaaaaaaaaaaaaaaaaaa"
+      "prepareTime": "5",
+      "prepareSteps": "coma o mato"
     },
     {
-      "id": "1f19",
-      "name": "Receita teste timeout",
+      "id": "1beb",
+      "name": "Outra receita vegana",
       "dificulty": "2",
       "isVegan": true,
-      "ingredients": "aaaaaaaaaaaaa\naaaaaaaaaaaaa\naaaaaaaaaaaaa",
-      "servings": "2",
-      "prepareTime": "2",
-      "prepareSteps": "\naaaaaaaaaaaaa\naaaaaaaaaaaaa\naaaaaaaaaaaaa"
-    },
-    {
-      "id": "f91b",
-      "name": "Piruliro baby",
-      "dificulty": "2",
-      "isVegan": true,
-      "ingredients": "aaaaaaaaaa",
-      "servings": "2",
-      "prepareTime": "2",
-      "prepareSteps": "aaaaaaaaaa"
-    },
-    {
-      "id": "96ed",
-      "name": "Feijoada cabulosa",
-      "dificulty": "2",
-      "isVegan": false,
-      "ingredients": "asasasasasasasas",
+      "ingredients": "asdhasbdsadbg jdscfsduch iucksdgciusdghc iudsgcpiusdgsdiuc iudsgcpisudg piudscgidasuc",
       "servings": "3",
-      "prepareTime": "2",
-      "prepareSteps": "asasasasasasasas"
+      "prepareTime": "3",
+      "prepareSteps": "asicubhasiucgapicuasc aiucgsaiucgasc asucgasucigascógashc ascaisgcáiscu as"
     },
     {
-      "id": "ddda",
-      "name": "bla bla bla",
-      "dificulty": "4",
-      "isVegan": true,
-      "ingredients": "asasdasdqaswdasdsadsadsa",
-      "servings": "3",
-      "prepareTime": "4",
-      "prepareSteps": "sadasdsadsadsadsdsadsa"
-    },
-    {
-      "id": "464b",
-      "name": "Bolo de chocolate",
-      "dificulty": "3",
-      "isVegan": false,
-      "ingredients": "3 ovos \n2 colheres de manteiga ( 40 gramas)\n200 ml de leite gelado\n200 gramas de farinha de trigo\nMeia colher de chá de fermento em pó ",
-      "servings": "4",
-      "prepareTime": "40",
-      "prepareSteps": "Misture todos os ingredientes secos e faça um buraco no meio da mistura, comece a adicionar os ingredientes molhados lentamente, misture por 5 minutos até obter uma mistura homogênea. \n\nCom o forno pré aquecido a 180 graus, coloque o bolo para assar durante 30 minutos, não abra o forno nos primeiros 20 minutos. \n\nPara checar se o bolo está pronto, após 20 minutos, insira uma faca seca na massa assando, se a faca sair limpa, tudo indica que seu bolo está pronto. Agora basta retirar do forno esfriar e servir."
-    },
-    {
-      "id": "daa1",
-      "name": "O Lorem Ipsum é um texto",
+      "id": "834f",
+      "name": "Outra receita não vegana",
       "dificulty": "5",
-      "isVegan": true,
-      "ingredients": "O Lorem Ipsum é um texto \nO Lorem Ipsum é um texto\nO Lorem Ipsum é um texto\nO Lorem Ipsum é um texto\nO Lorem Ipsum é um \nO Lorem \nO Lorem Ipsum é um textoO Lorem Ipsum é um texto",
-      "servings": "2",
-      "prepareTime": "20",
-      "prepareSteps": "O Lorem Ipsum é um \nO Lorem Ipsum é \nO Lorem Ipsum é um texto\nO Lorem Ipsum \nO Lorem "
+      "isVegan": false,
+      "ingredients": "asdhsaiudbswadg saiudgsgsaiupdgsa  piasudgspaiudgsadug  \nCarne moida de patinho\nMuito sangue de boi\nProteina animal\n",
+      "servings": "3",
+      "prepareTime": "3",
+      "prepareSteps": "Prepare\nCozinhe \ncoma"
+    },
+    {
+      "id": "eaf7",
+      "name": "receita teste",
+      "dificulty": "4",
+      "isVegan": false,
+      "ingredients": "carne, ovos, manteiga, oleo",
+      "servings": "3",
+      "prepareTime": "3",
+      "prepareSteps": "hahahs ahs asuaghsuags asagusa sg"
     }
   ]
 }

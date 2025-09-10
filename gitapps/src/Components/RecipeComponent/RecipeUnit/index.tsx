@@ -91,7 +91,7 @@ function RecipeUnit() {
                 size="small"
                 error={!!errors.name}
                 helperText={errors.name?.message}
-                placeholder={recipe?.name}
+                defaultValue={recipe?.name}
                 {...register("name", { required: true })}
               />
             </Grid2>

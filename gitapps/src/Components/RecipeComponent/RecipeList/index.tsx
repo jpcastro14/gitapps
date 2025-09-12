@@ -3,7 +3,6 @@ import {
   OverContainer,
   RecipeCard,
   RecipeCardContainer,
-  RecipeCode,
   RecipeImage,
   RecipeName,
   RecipeProps,
@@ -103,7 +102,14 @@ function Recipelist() {
                     </RecipeProps>
                   </RecipePropsDiv>
                   {recipe.isVegan ? (
-                    <VeganButton $veganColor={vegancolor} onClick={veganFIlter}>
+                    <VeganButton
+                      style={{
+                        borderRadius: "0px",
+                        width: "100%",
+                        height: "3rem",
+                        filter: "none",
+                      }}
+                    >
                       <img src={leaf} />
                     </VeganButton>
                   ) : (
@@ -128,14 +134,21 @@ function Recipelist() {
                       <img src={clock} />
                       <span>Fica pronto em {recipe.prepareTime} minutos</span>
                     </RecipeProps>
-                    {recipe.isVegan ? (
-                      <VeganButton $veganColor={true} onClick={veganFIlter}>
-                        <img src={leaf} />
-                      </VeganButton>
-                    ) : (
-                      ""
-                    )}
                   </RecipePropsDiv>
+                  {recipe.isVegan ? (
+                    <VeganButton
+                      style={{
+                        borderRadius: "0px",
+                        width: "100%",
+                        height: "3rem",
+                        filter: "none",
+                      }}
+                    >
+                      <img src={leaf} />
+                    </VeganButton>
+                  ) : (
+                    ""
+                  )}
                 </RecipeCard>
               ))}
         </RecipeCardContainer>

@@ -83,8 +83,14 @@ export const VeganButton = styled.button<ButtonProps>`
 
 export const RecipeCardContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media (max-width: 1400px){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   @media (max-width: 1200px){
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 700px){
     grid-template-columns: 1fr;
   }
 `;
@@ -94,9 +100,9 @@ export const RecipeCard = styled.div<ButtonProps>`
   background-color: white;
   margin: 0 auto;
   margin-top: 50px;
-  border-radius:6px;
-  max-width:550px ;
-  
+  border-radius:20px;
+  min-width: 330px;
+  max-width:350px ;
   filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.35));
   color: black;
   padding: 10px;
@@ -108,15 +114,6 @@ export const RecipeCard = styled.div<ButtonProps>`
 
 `
 
-export const RecipeCode = styled.p`
-  font-size: 10px;
-  color: gray;
-  display: flex;
-  margin-top: 40px;
-  width: 100%;
-  justify-self: center;
-`;
-
 export const RecipeName = styled.p`
     font-family: Poppins;
     font-size: 20px;
@@ -125,7 +122,7 @@ export const RecipeName = styled.p`
 export const RecipeImage = styled.div`
     width: 100%;
     background-color: darkgray;
-    border-radius: 4px;
+    border-radius: 10px;
     height:200px; 
 `;
 
@@ -142,8 +139,8 @@ export const RecipeProps = styled.div`
   img{
     margin-right: 20px;
     height: 30px;
-    border: 1px solid var(--form-blue);
-    border-radius: 8px;
+    border: 1px solid var(--regular-green);
+    border-radius: 100px;
     padding: 6px;
   }
 `;

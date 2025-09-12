@@ -44,6 +44,10 @@ border-radius: 8px;
         font-size: 2rem;
         margin-top: 0;
     }
+    @media (max-width:1200px) {
+        width:85%;
+        padding: 1rem;
+    }
 `;
 
 export const IngredientsContainer = styled.div`
@@ -51,6 +55,10 @@ export const IngredientsContainer = styled.div`
     flex-direction: column;
     text-align: start;
     padding-left: 10%;
+    div{
+        border: 1px solid red;
+        width: 20rem;
+    }
     @media (max-width:1200px) {
      padding-left: 1rem;
      h1{

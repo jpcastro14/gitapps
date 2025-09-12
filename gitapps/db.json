@@ -1,14 +1,14 @@
 {
   "recipes": [
     {
-      "id": "d4f8",
-      "name": "Receita não vegana",
-      "dificulty": "5",
+      "name": "Brigadeiro de maconha",
+      "dificulty": "6",
       "isVegan": false,
-      "ingredients": "kjsadgfuyasvduayswgfdsaugaspiugd",
-      "servings": "4",
-      "prepareTime": "5",
-      "prepareSteps": "não vegana"
+      "ingredients": "10 Gramas de colombia, 300 gramas de manteiga, 1 lata de leite condensado, 5 colheres de achocolatado em pó",
+      "servings": "5",
+      "prepareTime": "60",
+      "prepareSteps": "Separe sua maconha dichavada em um pote, derreta a manteiga em uma panela em banho maria, adicione a maconha na manteiga derretida, mantenha em banho maria por 40 minutos, deixe a manteiga esfriar e solidificar por completo, após esse processo, basta fazer o brigadeiro utilizando a manteiga infusionada.",
+      "id": "d4f8"
     },
     {
       "id": "447f",

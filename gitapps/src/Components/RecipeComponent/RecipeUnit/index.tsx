@@ -67,6 +67,7 @@ function RecipeUnit() {
             children: "Receita Editada com sucesso!",
             open: true,
           });
+          setIsmodalOpen(!ismodalOpen);
           setTimeout(() => {
             window.location.reload();
           }, 3000);
@@ -78,7 +79,11 @@ function RecipeUnit() {
   return (
     <>
       <AlertComponent open={alertProps.open} children={alertProps.children} />
-      <Modal open={ismodalOpen} onClose={handleClose}>
+      <Modal
+        style={{ overflowY: "scroll" }}
+        open={ismodalOpen}
+        onClose={handleClose}
+      >
         {/* ---------------------------------- Formulário de edição ---------------------------------- */}
         <ModalForm>
           <h2>Editar receita</h2>
@@ -103,9 +108,10 @@ function RecipeUnit() {
                 fullWidth
                 size="small"
                 type="number"
+                slotProps={{ htmlInput: { type: "number", min: 0, max: 5 } }}
                 error={!!errors.servings}
                 helperText={errors.servings?.message}
-                placeholder={recipe?.servings.toString()}
+                defaultValue={recipe?.servings.toString()}
                 {...register("servings", { required: false })}
               />
             </Grid2>
@@ -120,7 +126,7 @@ function RecipeUnit() {
                 size="small"
                 error={!!errors.prepareTime}
                 helperText={errors.prepareTime?.message}
-                placeholder={recipe?.prepareTime.toString()}
+                defaultValue={recipe?.prepareTime.toString()}
                 {...register("prepareTime", { required: true })}
               />
             </Grid2>
@@ -134,7 +140,7 @@ function RecipeUnit() {
                 error={!!errors.dificulty}
                 helperText={errors.dificulty?.message}
                 fullWidth
-                placeholder={recipe?.dificulty.toString()}
+                defaultValue={recipe?.dificulty.toString()}
                 {...register("dificulty")}
               />
             </Grid2>
@@ -150,7 +156,7 @@ function RecipeUnit() {
                 error={!!errors.ingredients}
                 helperText={errors.ingredients?.message}
                 size="medium"
-                placeholder={recipe?.ingredients}
+                defaultValue={recipe?.ingredients}
                 {...register("ingredients")}
               />
             </Grid2>
@@ -166,7 +172,7 @@ function RecipeUnit() {
                 error={!!errors.prepareSteps}
                 helperText={errors.prepareSteps?.message}
                 size="medium"
-                placeholder={recipe?.prepareSteps}
+                defaultValue={recipe?.prepareSteps}
                 {...register("prepareSteps")}
               />
             </Grid2>
@@ -217,9 +223,11 @@ function RecipeUnit() {
       </TopDecorativeBarEdit>
       <Container>
         <IngredientsContainer>
-          <h1>{recipe?.name}</h1>
-          <h2>Ingredientes:</h2>
-          <p>{list}</p>
+          <div>
+            <h1>{recipe?.name}</h1>
+            <h2>Ingredientes:</h2>
+            <p>{list}</p>
+          </div>
         </IngredientsContainer>
         <Divider />
         <PrepareStepsContainer>

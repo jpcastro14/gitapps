@@ -29,7 +29,7 @@ function Recipelist() {
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get("http://localhost:3000/recipes")
+        .get("http://172.28.248.82:8000/api/v1/recipes/")
         .then((data) => setRecipes(data.data))
         .catch((error) => console.log(error));
     };

@@ -31,7 +31,7 @@ function RecipeForm() {
     try {
       setRecipe(data);
       axios
-        .post("http://localhost:3000/recipes/", data)
+        .post("http://172.28.248.82:8000/api/v1/recipes/", data)
         .then((response) => {
           if (response.status === 201) {
             setAlertProps({
